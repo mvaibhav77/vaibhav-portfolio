@@ -7,7 +7,7 @@ const kiwi = Kiwi_Maru({ subsets: ["latin"], weight: "400" });
 const inconsolata = Inconsolata({ subsets: ["latin"], weight: "400" });
 
 export const Navbar = () => {
-  const [isNavbarOpen, setIsNavbarOpen] = useState("false");
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
   const handleNavbarToggle = (e) => {
     e.preventDefault();
@@ -54,7 +54,7 @@ export const Navbar = () => {
       </div>
 
       <div
-        className={`navbar-collapsed ${
+        className={`navbar-collapsed md:hidden ${
           isNavbarOpen ? "block" : "hidden"
         } flex flex-col items-center mt-4`}
       >
