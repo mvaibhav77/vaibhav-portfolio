@@ -1,18 +1,26 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
-import { Navbar } from './components/Navbar'
-import { ContactMe } from './components/ContactMe'
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { Navbar } from "./components/Navbar";
+import { ContactMe } from "./components/ContactMe";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Vaibhav Shukla | Portfolio',
-  description: 'This is my portfolio website.',
-}
+  title: "Vaibhav Shukla | Portfolio",
+  description: "This is my portfolio website.",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="icon"
+          href="/favicon.png"
+          type="favicon"
+          sizes="<generated>"
+        />
+      </head>
       <body className={inter.className}>
         {/* Navbar */}
         <Navbar />
@@ -21,5 +29,5 @@ export default function RootLayout({ children }) {
         <ContactMe />
       </body>
     </html>
-  )
+  );
 }
