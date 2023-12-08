@@ -1,3 +1,3 @@
 export const ContactMe = () => {
-  return <div className="mt-[100%]">ContactMe</div>;
+  return <div className="mt-[100vh] p-12">ContactMe</div>;
 };
