@@ -8,17 +8,28 @@ import { useMediaQuery } from "react-responsive";
 
 export const Navbar = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-  const isMobile = useMediaQuery({ maxWidth: 680 });
+  const isMobile = useMediaQuery({ maxWidth: 720 });
 
   const handleNavbarToggle = () => {
     setIsNavbarOpen((prevState) => !prevState);
   };
 
   return (
-    <Flex justify={"between"} align={"center"} className="bg-transparent p-12">
-      <Box className="logo">
-        <Heading weight={"regular"} as="h3">
-          <span className="text-primary">Vaibhav </span>Shukla
+    <Box
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: "100%",
+        position: isNavbarOpen ? "fixed" : "relative",
+        backgroundColor: isNavbarOpen ? "var(--my-dark)" : "",
+      }}
+      className="p-12 pb-4 !z-50 "
+    >
+      <Box className="logo !z-50">
+        <Heading weight={"bold"} as="h3">
+          <span className="text-gray-400">Vaibhav </span>Shukla
         </Heading>
       </Box>
 
@@ -76,36 +87,36 @@ export const Navbar = () => {
           transition={{ duration: 0.3 }}
           className={`${
             isNavbarOpen ? "fixed top-24 right-0" : "hidden"
-          } w-full shadow-lg z-50`}
+          } w-full shadow-lg z-50 `}
         >
           <Flex direction={"column"} className={`navbar-items`}>
             <Button
-              variant="ghost"
-              className="navbar-item !text-gray-500 !text-base !py-4"
+              variant="soft"
+              className="navbar-item !text-gray-200 !text-base !py-8 !bg-secondary"
             >
               Home
             </Button>
             <Button
-              variant="ghost"
-              className="navbar-item !text-gray-500 !text-base !py-4"
+              variant="soft"
+              className="navbar-item !text-gray-200 !text-base !py-8 !bg-secondary"
             >
               About
             </Button>
             <Button
-              variant="ghost"
-              className="navbar-item !text-gray-500 !text-base !py-4"
+              variant="soft"
+              className="navbar-item !text-gray-200 !text-base !py-8 !bg-secondary"
             >
               Projects
             </Button>
             <Button
-              variant="ghost"
-              className="navbar-item !text-gray-500 !text-base !py-4 "
+              variant="soft"
+              className="navbar-item !text-gray-200 !text-base !py-8 !bg-secondary "
             >
               Contact
             </Button>
           </Flex>
         </motion.Box>
       )}
-    </Flex>
+    </Box>
   );
 };

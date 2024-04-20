@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "var(--my-color)",
+        secondary: "var(--my-dark)",
       },
       screens: {
         md: { max: "1090px" },

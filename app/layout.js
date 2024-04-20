@@ -32,10 +32,10 @@ export default function RootLayout({ children }) {
           radius="large"
           scaling="95%"
         >
-          <MouseHighlighter />
+          {/* <MouseHighlighter /> */}
 
           <Navbar />
-          {children}
+          <Box className="w-[90%] mx-auto">{children}</Box>
           <ContactMe />
         </Theme>
       </body>
