@@ -1,9 +1,12 @@
-import { Inter } from "next/font/google";
+import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/Navbar";
 import { ContactMe } from "./components/ContactMe";
+import "@radix-ui/themes/styles.css";
+import { Box, Theme } from "@radix-ui/themes";
+import MouseHighlighter from "./components/MouseHighlighter";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto_Condensed({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Vaibhav Shukla | Portfolio",
@@ -21,12 +24,20 @@ export default function RootLayout({ children }) {
           sizes="<generated>"
         />
       </head>
-      <body className={inter.className}>
-        {/* Navbar */}
-        <Navbar />
-        {children}
-        {/* Contact Me */}
-        <ContactMe />
+      <body className={roboto.className}>
+        <Theme
+          appearance="dark"
+          accentColor="violet"
+          grayColor="sand"
+          radius="large"
+          scaling="95%"
+        >
+          <MouseHighlighter />
+
+          <Navbar />
+          {children}
+          <ContactMe />
+        </Theme>
       </body>
     </html>
   );
