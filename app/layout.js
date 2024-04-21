@@ -1,10 +1,8 @@
 import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/Navbar";
-import { ContactMe } from "./components/ContactMe";
 import "@radix-ui/themes/styles.css";
-import { Box, Theme } from "@radix-ui/themes";
-import MouseHighlighter from "./components/MouseHighlighter";
+import { Theme } from "@radix-ui/themes";
 
 const roboto = Roboto_Condensed({ subsets: ["latin"] });
 
@@ -24,7 +22,7 @@ export default function RootLayout({ children }) {
           sizes="<generated>"
         />
       </head>
-      <body className={roboto.className}>
+      <body className={`${roboto.className} overflow-x-hidden`}>
         <Theme
           appearance="dark"
           accentColor="violet"
@@ -32,11 +30,8 @@ export default function RootLayout({ children }) {
           radius="large"
           scaling="95%"
         >
-          {/* <MouseHighlighter /> */}
-
           <Navbar />
-          <Box className="w-[90%] mx-auto">{children}</Box>
-          <ContactMe />
+          <div className="w-[90%] mx-auto">{children}</div>
         </Theme>
       </body>
     </html>

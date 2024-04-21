@@ -3,10 +3,7 @@
 import Image from "next/image";
 import { Box, Heading, Strong, Text } from "@radix-ui/themes";
 import { useMediaQuery } from "react-responsive";
-import { motion } from "framer-motion";
-import { useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
   const isTab = useMediaQuery({ maxWidth: 1200 });
@@ -32,6 +29,7 @@ export default function Home() {
           className="!z-30"
         />
       </Box>
+
       {/* Heading */}
       <Box
         className={`absolute ${
@@ -42,21 +40,28 @@ export default function Home() {
             : "left-[49vw] top-[60vh] max-w-[560px]"
         }`}
       >
-        <Heading as="h1" weight={"light"} size={"6"}>
+        <Heading as="h1" weight={"light"} size={isMobile ? "5" : "6"}>
           {`Hello, I'm`} <Strong className="bg-primary">Vaibhav Shukla</Strong>
           {`, a Full Stack Web Developer Based in Pune`}
         </Heading>
       </Box>
+
       {/* Typing animation */}
-      {/* <Heading
-        as="h2"
-        weight={"bold"}
-        className={`typing-master text-left w-fit ${
-          isMobile ? "" : isTab ? "" : "!text-[90px] bottom-[50px] left-[20%]"
+      <div
+        className={`absolute bottom-[50px] top-auto ${
+          isMobile
+            ? "left-0 bottom-[40px] text-[20px] pl-[50px] "
+            : isTab
+            ? " left-[50px] text-[60px] mt-[0]"
+            : " left-[20%] text-[90px] -mt-[45px]"
         }`}
       >
-        I develop web applications...
-      </Heading> */}
+        <TypeAnimation
+          sequence={["I develop cool websites", 1000, "I love ReactJS", 1000]}
+          speed={20}
+          repeat={Infinity}
+        />
+      </div>
     </Box>
   );
 }

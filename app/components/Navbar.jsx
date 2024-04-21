@@ -22,17 +22,20 @@ export const Navbar = () => {
         alignItems: "center",
         justifyContent: "space-between",
         width: "100%",
-        position: isNavbarOpen ? "fixed" : "relative",
-        backgroundColor: isNavbarOpen ? "var(--my-dark)" : "",
+        position: "relative",
+        overflow: "hidden",
+        backgroundColor: isNavbarOpen ? "#2c1b4795" : "transparent",
       }}
-      className="p-12 pb-4 !z-50 "
+      className={`pb-4 !z-50 ${isMobile ? "p-4 py-8" : "p-12"}`}
     >
+      {/* logo */}
       <Box className="logo !z-50">
-        <Heading weight={"bold"} as="h3">
-          <span className="text-gray-400">Vaibhav </span>Shukla
+        <Heading weight={"bold"} as="h1" size={isMobile ? "4" : "5"}>
+          <span className="text-gray-500">Vaibhav </span>Shukla
         </Heading>
       </Box>
 
+      {/* navbar */}
       <Box className="navbar-menu">
         {isMobile ? (
           <Button
@@ -43,9 +46,9 @@ export const Navbar = () => {
           >
             {/* Change icon based on navbar state */}
             {isNavbarOpen ? (
-              <AiOutlineClose size={"36"} />
+              <AiOutlineClose color="white" size={"36"} />
             ) : (
-              <AiOutlineMenu size={"36"} />
+              <AiOutlineMenu color="white" size={"36"} />
             )}
           </Button>
         ) : (
@@ -53,25 +56,25 @@ export const Navbar = () => {
             <Button
               variant="ghost"
               weight={"bold"}
-              className="navbar-item !text-gray-500 !text-base"
+              className="navbar-item !text-gray-500 !text-base !cursor-pointer"
             >
               Home
             </Button>
             <Button
               variant="ghost"
-              className="navbar-item !text-gray-500 !text-base"
+              className="navbar-item !text-gray-500 !text-base !cursor-pointer"
             >
               About
             </Button>
             <Button
               variant="ghost"
-              className="navbar-item !text-gray-500 !text-base"
+              className="navbar-item !text-gray-500 !text-base !cursor-pointer"
             >
               Projects
             </Button>
             <Button
               variant="ghost"
-              className="navbar-item !text-gray-500 !text-base"
+              className="navbar-item !text-gray-500 !text-base !cursor-pointer"
             >
               Contact
             </Button>
@@ -86,31 +89,31 @@ export const Navbar = () => {
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
           className={`${
-            isNavbarOpen ? "fixed top-24 right-0" : "hidden"
+            isNavbarOpen ? "fixed top-[5.25rem] right-0" : "hidden"
           } w-full shadow-lg z-50 `}
         >
-          <Flex direction={"column"} className={`navbar-items`}>
+          <Flex direction={"column"} gap={0} className={`navbar-items`}>
             <Button
               variant="soft"
-              className="navbar-item !text-gray-200 !text-base !py-8 !bg-secondary"
+              className="navbar-item !border-0 !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-pointer"
             >
               Home
             </Button>
             <Button
               variant="soft"
-              className="navbar-item !text-gray-200 !text-base !py-8 !bg-secondary"
+              className="navbar-item rounded-none !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-pointer"
             >
               About
             </Button>
             <Button
               variant="soft"
-              className="navbar-item !text-gray-200 !text-base !py-8 !bg-secondary"
+              className="navbar-item !border-0 !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-pointer"
             >
               Projects
             </Button>
             <Button
               variant="soft"
-              className="navbar-item !text-gray-200 !text-base !py-8 !bg-secondary "
+              className="navbar-item !border-0 !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-pointer"
             >
               Contact
             </Button>
