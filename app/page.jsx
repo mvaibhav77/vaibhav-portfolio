@@ -4,10 +4,12 @@ import Image from "next/image";
 import { Box, Heading, Strong, Text } from "@radix-ui/themes";
 import { useMediaQuery } from "react-responsive";
 import { TypeAnimation } from "react-type-animation";
+import { useHover } from "./context/MouseContext";
 
 export default function Home() {
   const isTab = useMediaQuery({ maxWidth: 1200 });
   const isMobile = useMediaQuery({ maxWidth: 720 });
+  const { onCursorIn, onCursorOut } = useHover();
 
   return (
     <Box className="main-content !z-30">
@@ -40,7 +42,13 @@ export default function Home() {
             : "left-[49vw] top-[60vh] max-w-[560px]"
         }`}
       >
-        <Heading as="h1" weight={"light"} size={isMobile ? "5" : "6"}>
+        <Heading
+          as="h1"
+          weight={"light"}
+          size={isMobile ? "5" : "6"}
+          onMouseOver={onCursorIn}
+          onMouseOut={onCursorOut}
+        >
           {`Hello, I'm`} <Strong className="bg-primary">Vaibhav Shukla</Strong>
           {`, a Full Stack Web Developer Based in Pune`}
         </Heading>
@@ -55,10 +63,12 @@ export default function Home() {
             ? " left-[50px] text-[60px] mt-[0]"
             : " left-[20%] text-[90px] -mt-[45px]"
         }`}
+        onMouseOver={onCursorIn}
+        onMouseOut={onCursorOut}
       >
         <TypeAnimation
-          sequence={["I develop cool websites", 1000, "I love ReactJS", 1000]}
-          speed={20}
+          sequence={["I develop cool websites", 2000, "I love ReactJS", 1000]}
+          speed={15}
           repeat={Infinity}
         />
       </div>

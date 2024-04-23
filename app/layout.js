@@ -3,6 +3,11 @@ import "./globals.css";
 import { Navbar } from "./components/Navbar";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
+import Footer from "./components/Footer";
+import MouseFollower from "mouse-follower";
+import gsap from "gsap";
+import MouseHighlighter from "./components/MouseHighlighter";
+import { HoverProvider } from "./context/MouseContext";
 
 const roboto = Roboto_Condensed({ subsets: ["latin"] });
 
@@ -30,8 +35,12 @@ export default function RootLayout({ children }) {
           radius="large"
           scaling="95%"
         >
-          <Navbar />
-          <div className="w-[90%] mx-auto">{children}</div>
+          <HoverProvider>
+            <MouseHighlighter />
+            <Navbar />
+            <div className="w-[90%] mx-auto">{children}</div>
+            <Footer />
+          </HoverProvider>
         </Theme>
       </body>
     </html>

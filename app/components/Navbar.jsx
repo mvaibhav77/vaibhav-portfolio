@@ -5,10 +5,12 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { Box, Button, Flex, Heading } from "@radix-ui/themes";
 import { useMediaQuery } from "react-responsive";
+import { useHover } from "../context/MouseContext";
 
 export const Navbar = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 720 });
+  const { onCursorIn, onCursorOut } = useHover();
 
   const handleNavbarToggle = () => {
     setIsNavbarOpen((prevState) => !prevState);
@@ -29,7 +31,11 @@ export const Navbar = () => {
       className={`pb-4 !z-50 ${isMobile ? "p-4 py-8" : "p-12"}`}
     >
       {/* logo */}
-      <Box className="logo !z-50">
+      <Box
+        className="logo !z-50"
+        onMouseOver={onCursorIn}
+        onMouseOut={onCursorOut}
+      >
         <Heading weight={"bold"} as="h1" size={isMobile ? "4" : "5"}>
           <span className="text-gray-500">Vaibhav </span>Shukla
         </Heading>
@@ -41,8 +47,10 @@ export const Navbar = () => {
           <Button
             variant="ghost"
             size={"4"}
-            className="navbar-toggle cursor-pointer block"
+            className="navbar-toggle cursor-pointer block hover:bg-transparent"
             onClick={handleNavbarToggle}
+            onMouseOver={onCursorIn}
+            onMouseOut={onCursorOut}
           >
             {/* Change icon based on navbar state */}
             {isNavbarOpen ? (
@@ -52,29 +60,35 @@ export const Navbar = () => {
             )}
           </Button>
         ) : (
-          <Flex direction={"row"} gap={"8"} className={`navbar-items `}>
+          <Flex
+            direction={"row"}
+            gap={"8"}
+            className={`navbar-items `}
+            onMouseOver={onCursorIn}
+            onMouseOut={onCursorOut}
+          >
             <Button
               variant="ghost"
               weight={"bold"}
-              className="navbar-item !text-gray-500 !text-base !cursor-pointer"
+              className="navbar-item !text-gray-500 !text-base !cursor-none hover:bg-transparent py-4 hover:underline"
             >
               Home
             </Button>
             <Button
               variant="ghost"
-              className="navbar-item !text-gray-500 !text-base !cursor-pointer"
+              className="navbar-item !text-gray-500 !text-base !cursor-none hover:bg-transparent py-4 hover:underline"
             >
               About
             </Button>
             <Button
               variant="ghost"
-              className="navbar-item !text-gray-500 !text-base !cursor-pointer"
+              className="navbar-item !text-gray-500 !text-base !cursor-none hover:bg-transparent py-4 hover:underline"
             >
               Projects
             </Button>
             <Button
               variant="ghost"
-              className="navbar-item !text-gray-500 !text-base !cursor-pointer"
+              className="navbar-item !text-gray-500 !text-base !cursor-none hover:bg-transparent py-4 hover:underline"
             >
               Contact
             </Button>
@@ -95,25 +109,33 @@ export const Navbar = () => {
           <Flex direction={"column"} gap={0} className={`navbar-items`}>
             <Button
               variant="soft"
-              className="navbar-item !border-0 !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-pointer"
+              className="navbar-item !border-0 !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-none "
+              onMouseOver={onCursorIn}
+              onMouseOut={onCursorOut}
             >
               Home
             </Button>
             <Button
               variant="soft"
-              className="navbar-item rounded-none !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-pointer"
+              className="navbar-item rounded-none !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-none"
+              onMouseOver={onCursorIn}
+              onMouseOut={onCursorOut}
             >
               About
             </Button>
             <Button
               variant="soft"
-              className="navbar-item !border-0 !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-pointer"
+              className="navbar-item !border-0 !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-none"
+              onMouseOver={onCursorIn}
+              onMouseOut={onCursorOut}
             >
               Projects
             </Button>
             <Button
               variant="soft"
-              className="navbar-item !border-0 !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-pointer"
+              className="navbar-item !border-0 !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-none"
+              onMouseOver={onCursorIn}
+              onMouseOut={onCursorOut}
             >
               Contact
             </Button>
