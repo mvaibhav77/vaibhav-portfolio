@@ -7,7 +7,7 @@ import { TypeAnimation } from "react-type-animation";
 import { useHover } from "./context/MouseContext";
 
 export default function Home() {
-  const isTab = useMediaQuery({ maxWidth: 1200 });
+  const isTab = useMediaQuery({ maxWidth: 1300 });
   const isMobile = useMediaQuery({ maxWidth: 720 });
   const { onCursorIn, onCursorOut } = useHover();
 

@@ -38,7 +38,6 @@ body {
     rgb(var(--background-start-rgb)); */
   margin: 0;
   padding: 0;
-  overflow: hidden !important;
 }
 
 /* Highlighter.module.css */
@@ -69,6 +68,21 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #2c1b47;
+}
+
+.centerize {
+  display: table !important;
+  table-layout: fixed !important;
+  height: 100% !important;
+  position: relative !important;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.vertical-center {
+  display: table-cell !important;
+  vertical-align: middle !important;
 }
 
 .image-container {

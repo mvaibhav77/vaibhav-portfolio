@@ -2,7 +2,7 @@ import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/Navbar";
 import "@radix-ui/themes/styles.css";
-import { Theme } from "@radix-ui/themes";
+import { Box, Theme } from "@radix-ui/themes";
 import Footer from "./components/Footer";
 import MouseFollower from "mouse-follower";
 import gsap from "gsap";
@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
           <HoverProvider>
             <MouseHighlighter />
             <Navbar />
-            <div className="w-[90%] mx-auto">{children}</div>
+            <Box className="!w-[90%] !mx-auto">{children}</Box>
             <Footer />
           </HoverProvider>
         </Theme>
