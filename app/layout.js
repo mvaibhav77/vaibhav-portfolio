@@ -4,8 +4,6 @@ import { Navbar } from "./components/Navbar";
 import "@radix-ui/themes/styles.css";
 import { Box, Theme } from "@radix-ui/themes";
 import Footer from "./components/Footer";
-import MouseFollower from "mouse-follower";
-import gsap from "gsap";
 import MouseHighlighter from "./components/MouseHighlighter";
 import { HoverProvider } from "./context/MouseContext";
 
@@ -26,8 +24,9 @@ export default function RootLayout({ children }) {
           type="favicon"
           sizes="<generated>"
         />
+        <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`${roboto.className} overflow-x-hidden`}>
+      <body className={`${roboto.className} overflow-x-hidden `}>
         <Theme
           appearance="dark"
           accentColor="violet"
@@ -38,7 +37,7 @@ export default function RootLayout({ children }) {
           <HoverProvider>
             <MouseHighlighter />
             <Navbar />
-            <Box className="!w-[90%] !mx-auto">{children}</Box>
+            <main>{children}</main>
             <Footer />
           </HoverProvider>
         </Theme>

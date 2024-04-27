@@ -4,12 +4,20 @@ import { Box } from "@radix-ui/themes";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useHover } from "../context/MouseContext";
+import { useMediaQuery } from "react-responsive";
 
 const MouseHighlighter = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState("default");
+  const isMobile = useMediaQuery({ maxWidth: 720 });
 
   const { isHovered } = useHover();
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (isHovered) setCursorVariant("hover");
@@ -54,11 +62,15 @@ const MouseHighlighter = () => {
   };
 
   return (
-    <motion.div
-      variants={variants}
-      animate={cursorVariant}
-      className="fixed top-0 left-0 bg-primary opacity-90 h-[32px] w-[32px] rounded-full pointer-events-none z-[500]"
-    ></motion.div>
+    mounted && (
+      <motion.div
+        variants={variants}
+        animate={cursorVariant}
+        className={`${
+          isMobile && "hidden"
+        } fixed top-0 left-0 bg-primary opacity-90 h-[32px] w-[32px] rounded-full pointer-events-none z-[500]`}
+      ></motion.div>
+    )
   );
 };
 
