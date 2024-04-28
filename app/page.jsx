@@ -1,28 +1,18 @@
 "use client";
 import Image from "next/image";
-import { Box, Heading, Strong, Text } from "@radix-ui/themes";
-import { useMediaQuery } from "react-responsive";
+import { Box, Heading, Strong } from "@radix-ui/themes";
 import { TypeAnimation } from "react-type-animation";
 import { useHover } from "./context/MouseContext";
-import { useEffect, useState } from "react";
-import Loader from "./components/Loader";
 
 export default function Home() {
-  const isTab = useMediaQuery({ maxWidth: 1300 });
-  const isMobile = useMediaQuery({ maxWidth: 720 });
   const { onCursorIn, onCursorOut } = useHover();
 
   return (
-    <Box className="main-content w-[90%] mx-auto !z-30">
+    <Box className="main-content w-[90%] mx-auto !z-30 ">
       {/* Image */}
       <Box
-        className={`relative logo  bg-center bg-contain bg-no-repeat !z-30  ${
-          isMobile
-            ? "image-container-big top-[-12vh] left-[-20px] !w-[100vw] !h-[69vh]"
-            : isTab
-            ? "image-container top-[20px] left-[-50px] !w-[640px] !h-[560px]"
-            : "image-container -top-[15.3vh] left-[1vw] !w-[47vw] !h-[78vh]"
-        }`}
+        className={`relative logo bg-center bg-contain bg-no-repeat !z-30 image-container top-[-12vh] left-[-20px] !w-[100vw] !h-[65vh] md:top-[20px] md:left-[-50px] md:!w-[640px] md:!h-[560px] lg:-top-[19.5vh] lg:left-[1vw] lg:!w-[47vw] lg:!h-[78vh]
+        `}
       >
         <Image
           src={"/images/me_blacknwhite.png"}
@@ -30,23 +20,18 @@ export default function Home() {
           objectFit="cover"
           alt="profile photo "
           className="!z-30 bg-center !overflow-hidden"
+          priority
         />
       </Box>
 
       {/* Heading */}
       <Box
-        className={`absolute ${
-          isMobile
-            ? "top-[67vh] "
-            : isTab
-            ? "w-[360px] ml-[15px] mt-[115px] left-[50%] top-[50vh] bottom-auto"
-            : "left-[49vw] top-[60vh] max-w-[560px]"
-        }`}
+        className={`absolute top-[60vh] md:w-[360px] md:ml-[15px] md:mt-[115px] md:left-[50%] md:top-[50vh] md:bottom-auto lg:left-[49vw] lg:top-[60vh] lg:max-w-[560px]`}
       >
         <Heading
           as="h1"
           weight={"light"}
-          size={isMobile ? "5" : "6"}
+          size={"6"}
           onMouseOver={onCursorIn}
           onMouseOut={onCursorOut}
         >
@@ -57,13 +42,7 @@ export default function Home() {
 
       {/* Typing animation */}
       <div
-        className={`absolute bottom-[50px] top-auto ${
-          isMobile
-            ? "left-0 !bottom-[140px] text-[25px] pl-[50px] "
-            : isTab
-            ? " left-[50px] text-[60px] !bottom-[100px]"
-            : " left-[20%] text-[90px] !bottom-[30px] "
-        }`}
+        className={`absolute top-auto left-0 !bottom-[140px] text-[25px] pl-[50px] md:left-[50px] md:text-[60px] md:!bottom-[200px] lg:left-[20%] lg:text-[90px] lg:!bottom-[30px] `}
         onMouseOver={onCursorIn}
         onMouseOut={onCursorOut}
       >

@@ -14,7 +14,7 @@ export const Breadcrumb = () => {
 
   return (
     <Box
-      className="absolute bottom-[-55%] left-[25%] text-lg text-gray-500 text-center"
+      className="absolute bottom-[-55%] md:bottom-[-45%] lg:bottom-[-45%] md:left-[35%] lg:left-[25%] left-[30px] text-lg text-gray-500 text-center"
       onMouseOver={onCursorIn}
       onMouseOut={onCursorOut}
     >
@@ -25,9 +25,8 @@ export const Breadcrumb = () => {
               pathname.slice(1, 2).toUpperCase() +
               pathname.slice(2).toLowerCase()
             }`,
-            2000,
           ]}
-          speed={10}
+          speed={5}
           cursor={false}
         />
       </Link>
@@ -37,7 +36,7 @@ export const Breadcrumb = () => {
 
 export const DownArrow = () => {
   return (
-    <Box className="absolute bottom-[-55%] left-[75%] text-center">
+    <Box className="absolute bottom-[-55%] md:bottom-[-45%] lg:bottom-[-45%] right-[40px] md:left-[80%] lg:left-[75%] text-center">
       <FaChevronDown className="text-gray-500 text-2xl animate-bounce" />
     </Box>
   );

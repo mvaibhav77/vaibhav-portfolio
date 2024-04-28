@@ -15,11 +15,11 @@ export default function Resume() {
   const { onCursorIn, onCursorOut } = useHover();
 
   return (
-    <Box className="main-content !z-30 hideScrollBar h-full">
+    <Box className="main-content !z-30 hideScrollBar h-[70vh] md:h-full">
       {/* header */}
       <Box className="relative top-[-120px] left-0 w-screen h-[60vh] ">
         <Heading
-          className={`absolute top-[80%] left-[50%] translate-x-[-50%] ${
+          className={`absolute top-[80%] md:top-[70%] lg:top-[70%] left-[50%] translate-x-[-50%] ${
             isMobile ? "!text-3xl" : isTab ? "!text-[8vw]" : "!text-[8.5vw]"
           }`}
           onMouseOver={onCursorIn}
@@ -28,19 +28,8 @@ export default function Resume() {
           Resume
         </Heading>
 
-        {/* breadcrumbs */}
-        {/* <Box className="absolute bottom-[-55%] left-[25%] text-lg text-gray-500 text-center">
-          <TypeAnimation
-            sequence={["Home / Resume", 2000]}
-            speed={15}
-            cursor={false}
-          />
-        </Box> */}
         <Breadcrumb />
-        {/* down arrow */}
-        {/* <Box className="absolute bottom-[-55%] left-[75%] text-center">
-          <FaChevronDown className="text-gray-500 text-2xl animate-bounce" />
-        </Box> */}
+
         <DownArrow />
       </Box>
     </Box>

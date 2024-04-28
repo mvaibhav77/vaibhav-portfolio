@@ -12,7 +12,6 @@ export const Navbar = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 720 });
   const isTab = useMediaQuery({ maxWidth: 1300 });
-  // const [isMobile, setIsMobile] = useState(false);
   const { onCursorIn, onCursorOut } = useHover();
 
   const handleNavbarToggle = () => {
@@ -24,18 +23,26 @@ export const Navbar = () => {
     setMounted(true);
   }, []);
 
-  // useEffect(() => {
-  //   if (window) {
-  //     window.addEventListener("resize", () => {
-  //       if (window.innerWidth > 720) {
-  //         setIsMobile(false);
-  //         // setIsNavbarOpen(false);
-  //       } else {
-  //         setIsMobile(true);
-  //       }
-  //     });
-  //   }
-  // }, [window.innerWidth]);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY !== 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const links = [
+    { name: "Home", link: "/" },
+    { name: "Resume", link: "/resume" },
+    { name: "Projects", link: "/" },
+    { name: "Contact", link: "/" },
+  ];
 
   return (
     mounted && (
@@ -46,11 +53,13 @@ export const Navbar = () => {
           alignItems: "center",
           justifyContent: "space-between",
           width: "100%",
-          position: "relative",
+          position: isMobile ? "fixed" : "relative",
+          top: "0",
           overflow: "hidden",
-          backgroundColor: isNavbarOpen ? "#2c1b4795" : "transparent",
+          backgroundColor:
+            isNavbarOpen || isScrolled ? "var(--gray-2)" : "transparent",
         }}
-        className={`pb-4 !z-50 ${
+        className={`pb-4 !z-50 transition-colors duration-500 ease-out ${
           isMobile ? "p-4 px-5" : isTab ? "p-4 px-8" : "p-12"
         }`}
       >
@@ -71,6 +80,9 @@ export const Navbar = () => {
             <Button
               variant="ghost"
               size={"4"}
+              aria-label={
+                isNavbarOpen ? "Close navigation menu" : "Open navigation menu"
+              }
               className="navbar-toggle cursor-pointer block hover:bg-transparent"
               onClick={handleNavbarToggle}
               onMouseOver={onCursorIn}
@@ -87,36 +99,22 @@ export const Navbar = () => {
             <Flex
               direction={"row"}
               gap={"8"}
-              className={`navbar-items `}
+              className={`navbar-items`}
               onMouseOver={onCursorIn}
               onMouseOut={onCursorOut}
             >
-              <Link
-                href={"/"}
-                weight={"bold"}
-                className="navbar-item !text-gray-500 !text-base !cursor-none hover:bg-transparent py-4 hover:underline"
-              >
-                Home
-              </Link>
-              <Link
-                href={"/resume"}
-                // variant="ghost"
-                className="navbar-item !text-gray-500 !text-base !cursor-none hover:bg-transparent py-4 hover:underline"
-              >
-                Resume
-              </Link>
-              <Link
-                href={"/"}
-                className="navbar-item !text-gray-500 !text-base !cursor-none hover:bg-transparent py-4 hover:underline"
-              >
-                Projects
-              </Link>
-              <Link
-                href={"/"}
-                className="navbar-item !text-gray-500 !text-base !cursor-none hover:bg-transparent py-4 hover:underline"
-              >
-                Contact
-              </Link>
+              {links.map((item, index) => (
+                <Link
+                  name={item.name}
+                  key={index}
+                  href={item.link}
+                  aria-label={`${item.name} route link`}
+                  weight={"bold"}
+                  className="navbar-item !text-gray-200 !text-base !cursor-none hover:bg-transparent py-4 hover:underline"
+                >
+                  {item.name}
+                </Link>
+              ))}
             </Flex>
           )}
         </Box>
@@ -124,46 +122,30 @@ export const Navbar = () => {
         {isMobile && (
           <motion.Box
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
+            animate={
+              isNavbarOpen
+                ? { opacity: 1, height: "auto" }
+                : { opacity: 0, height: 0 }
+            }
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.5 }}
             className={`${
-              isNavbarOpen ? "fixed top-[4.25rem] right-0" : "hidden"
+              isNavbarOpen ? "fixed top-[4.2rem] right-0" : "hidden"
             } w-full shadow-lg z-50 `}
           >
             <Flex direction={"column"} gap={0} className={`navbar-items`}>
-              <Button
-                variant="soft"
-                className="navbar-item !border-0 !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-none "
-                onMouseOver={onCursorIn}
-                onMouseOut={onCursorOut}
-              >
-                Home
-              </Button>
-              <Button
-                variant="soft"
-                className="navbar-item rounded-none !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-none"
-                onMouseOver={onCursorIn}
-                onMouseOut={onCursorOut}
-              >
-                About
-              </Button>
-              <Button
-                variant="soft"
-                className="navbar-item !border-0 !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-none"
-                onMouseOver={onCursorIn}
-                onMouseOut={onCursorOut}
-              >
-                Projects
-              </Button>
-              <Button
-                variant="soft"
-                className="navbar-item !border-0 !text-gray-200 !text-base !py-8 !bg-[#2c1b4795] !cursor-none"
-                onMouseOver={onCursorIn}
-                onMouseOut={onCursorOut}
-              >
-                Contact
-              </Button>
+              {links.map((item, index) => (
+                <Link
+                  name={item.name}
+                  key={index}
+                  href={item.link}
+                  aria-label={`${item.name} route link`}
+                  onClick={() => setIsNavbarOpen(false)}
+                  className="navbar-item text-center rounded-none !text-gray-200 !text-base !py-6 !bg-[var(--gray-2)] !cursor-none"
+                >
+                  {item.name}
+                </Link>
+              ))}
             </Flex>
           </motion.Box>
         )}

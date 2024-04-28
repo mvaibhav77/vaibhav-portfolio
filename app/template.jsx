@@ -28,7 +28,7 @@ export default function Template({ children }) {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.75, ease: "easeInOut" }}
-          className="!mx-auto h-full"
+          className="!mx-auto h-full lg:min-h-auto md:min-h-[80vh] mt-[60px] md:mt-0"
         >
           {children}
         </motion.div>

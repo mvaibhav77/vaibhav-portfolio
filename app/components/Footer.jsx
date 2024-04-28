@@ -89,6 +89,7 @@ const Footer = () => {
             <Link
               href={"https://www.linkedin.com/in/mvaibhav77"}
               target="_blank"
+              aria-label={`Linkedin profile link`}
               className="flex flex-col items-center justify-center my-4 w-[24px] h-[24px] rounded-full overflow-hidden"
             >
               <FaLinkedinIn color="white" className="h-[18px] w-[18px]" />
@@ -96,6 +97,7 @@ const Footer = () => {
             <Link
               href={"https://www.twitter.com/im_vaibhav77"}
               target="_blank"
+              aria-label={`Twitter profile link`}
               className="flex flex-col items-center justify-center my-4 w-[24px] h-[24px] rounded-full overflow-hidden"
             >
               <FaTwitter color="white" className="h-[18px] w-[18px]" />
@@ -103,6 +105,7 @@ const Footer = () => {
             <Link
               href={"https://www.github.com/mvaibhav77"}
               target="_blank"
+              aria-label={`Github Profile link`}
               className="flex flex-col items-center justify-center my-4 w-[24px] h-[24px] rounded-full overflow-hidden"
             >
               <FaGithub color="white" className="h-[18px] w-[18px]" />
