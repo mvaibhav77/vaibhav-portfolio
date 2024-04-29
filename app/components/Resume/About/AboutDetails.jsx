@@ -1,0 +1,147 @@
+import {
+  Badge,
+  Box,
+  Button,
+  Code,
+  DataList,
+  Flex,
+  IconButton,
+  Text,
+} from "@radix-ui/themes";
+import Link from "next/link";
+import { FaCopy, FaLink } from "react-icons/fa6";
+import { useHover } from "../../../context/MouseContext";
+
+const Details = () => {
+  const { onCursorIn, onCursorOut } = useHover();
+
+  const handleDownloadResume = () => {
+    // download resume
+    window.open("/files/resume.pdf");
+  };
+
+  return (
+    <Box className="desc text-center ml-0 md:text-left lg:text-left md:ml-[145px] lg:ml-[195px]">
+      {/* bio */}
+      <Text
+        className="mt-0 break-words"
+        onMouseOver={onCursorIn}
+        onMouseOut={onCursorOut}
+      >
+        Hello! I’m Vaibhav Shukla. I am a full stack developer with a passion
+        for building beautiful and functional user interfaces. I have rich
+        experience in React, Next.js, Node.js and more
+      </Text>
+
+      <Box className="details mt-[25px] w-fit mx-auto md:mx-0 lg:mx-0">
+        <Flex
+          direction={{ md: "row", initial: "column" } || "column"}
+          mx={{ xs: "0", initial: "auto" }}
+          maxWidth={{ xs: "full", initial: "250px" }}
+          gap={{ xs: "7", initial: "4" }}
+          className="pl-8 md:pl-0 lg:pl-0"
+        >
+          {/* First column */}
+          <DataList.Root
+            size={{ md: "2", lg: "3" } || "2"}
+            onMouseOver={onCursorIn}
+            onMouseOut={onCursorOut}
+          >
+            <DataList.Item align="center">
+              <DataList.Label minWidth="88px">Freelance</DataList.Label>
+              <DataList.Value>
+                <Badge color="purple" variant="soft" radius="full">
+                  Available
+                </Badge>
+              </DataList.Value>
+            </DataList.Item>
+            <DataList.Item>
+              <DataList.Label minWidth="88px">GitHub</DataList.Label>
+              <DataList.Value>
+                <Flex align="center" gap="2">
+                  <Code variant="ghost">mvaibhav77</Code>
+                  <IconButton
+                    size="1"
+                    aria-label="Copy value"
+                    color="gray"
+                    variant="ghost"
+                    onClick={() => {}}
+                    className="hover:scale-120"
+                  >
+                    <FaCopy />
+                  </IconButton>
+                </Flex>
+              </DataList.Value>
+            </DataList.Item>
+            <DataList.Item>
+              <DataList.Label minWidth="88px">Phone</DataList.Label>
+              <DataList.Value>
+                <Link
+                  href="tel:917987744456"
+                  aria-label="Phone Number"
+                  className="hover:underline"
+                >
+                  +91 7987744456
+                </Link>
+              </DataList.Value>
+            </DataList.Item>
+          </DataList.Root>
+
+          {/* Second column */}
+          <DataList.Root
+            size={{ md: "2", lg: "3" } || "2"}
+            onMouseOver={onCursorIn}
+            onMouseOut={onCursorOut}
+          >
+            <DataList.Item>
+              <DataList.Label minWidth="88px">Name</DataList.Label>
+              <DataList.Value>Vaibhav Shukla</DataList.Value>
+            </DataList.Item>
+            <DataList.Item>
+              <DataList.Label minWidth="88px">Email </DataList.Label>
+              <DataList.Value>
+                <Link
+                  variant="ghost"
+                  href="mailto:shukla.vaibhav1077@gmail.com"
+                  aria-label="Email Address"
+                  className="hover:underline overflow-hidden"
+                >
+                  shukla.vaibhav1077@gmail.com
+                </Link>
+              </DataList.Value>
+            </DataList.Item>
+            <DataList.Item>
+              <DataList.Label minWidth="88px">Company</DataList.Label>
+              <DataList.Value>
+                <Link
+                  target="_blank"
+                  aria-label="Company Website"
+                  href="https://omegaorion.com"
+                  className="hover:underline"
+                >
+                  Omega Orion
+                </Link>
+              </DataList.Value>
+            </DataList.Item>
+          </DataList.Root>
+        </Flex>
+
+        {/* download resume */}
+        <Button
+          variant="outline"
+          color="purple"
+          size={"3"}
+          onMouseOver={onCursorIn}
+          onMouseOut={onCursorOut}
+          aria-label="Download Resume"
+          className="!mt-6 hover:scale-105 hover:!bg-primary hover:!text-white"
+          onClick={handleDownloadResume}
+        >
+          View Resume
+        </Button>
+      </Box>
+    </Box>
+  );
+};
+
+export default Details;

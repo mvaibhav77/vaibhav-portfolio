@@ -8,6 +8,7 @@ import { TypeAnimation } from "react-type-animation";
 import { Breadcrumb, DownArrow } from "../components/Breadcrumb";
 import Loader from "../components/Loader";
 import { useEffect, useState } from "react";
+import About from "../components/Resume/About/About";
 
 export default function Resume() {
   const isTab = useMediaQuery({ maxWidth: 1300 });
@@ -15,7 +16,7 @@ export default function Resume() {
   const { onCursorIn, onCursorOut } = useHover();
 
   return (
-    <Box className="main-content !z-30 hideScrollBar h-[70vh] md:h-full">
+    <Box className="main-content !z-30 hideScrollBar h-full">
       {/* header */}
       <Box className="relative top-[-120px] left-0 w-screen h-[60vh] ">
         <Heading
@@ -32,6 +33,11 @@ export default function Resume() {
 
         <DownArrow />
       </Box>
+
+      {/* About */}
+      <About />
+
+      {/* Skills */}
     </Box>
   );
 }
