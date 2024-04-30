@@ -23,7 +23,7 @@ const Footer = () => {
       <Box
         className={`footer ${
           isTab
-            ? "relative bg-[var(--gray-2)] py-[50px] top-[25vh] left-0 h-auto right-auto"
+            ? "relative bg-[var(--gray-2)] py-[50px]  left-0 h-auto right-auto"
             : "fixed bottom-[50px] left-[50px] right-[50px] height-[1px] z-[100000] p-0"
         }`}
       >

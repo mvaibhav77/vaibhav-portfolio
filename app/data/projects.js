@@ -10,14 +10,14 @@ export const projects = [
     id: 2,
     title: "ShieldBuntu: Ubuntu Hardening Application",
     Description: "",
-    tags: ["AI/Ml", "Python", "Next.js", "TailwindCSS"],
+    tags: ["Cybersecurity", "Ubuntu", "React", "Rust", "Typescript"],
     image: "/images/shieldBuntu.png",
   },
   {
     id: 3,
-    title: "OpinHacks Event Site",
+    title: "OpinHacks: Hackathon Event Site",
     Description: "",
-    tags: ["AI/Ml", "Python", "Next.js", "TailwindCSS"],
-    image: "",
+    tags: ["React", "TailwindCSS", "Hackathon", "Management"],
+    image: "/images/opinHacks.png",
   },
 ];

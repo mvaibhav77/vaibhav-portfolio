@@ -6,6 +6,7 @@ import { useHover } from "../context/MouseContext";
 import { Breadcrumb, DownArrow } from "../components/_shared/Breadcrumb";
 import About from "../components/Resume/About/About";
 import Projects from "../components/Resume/Projects/Projects";
+import Experience from "../components/Resume/Experience/Experience";
 
 export default function Resume() {
   const isTab = useMediaQuery({ maxWidth: 1300 });
@@ -33,6 +34,9 @@ export default function Resume() {
 
       {/* About */}
       <About />
+
+      {/* Experience */}
+      <Experience />
 
       {/* Projects */}
       <Projects />

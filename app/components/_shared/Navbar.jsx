@@ -40,8 +40,8 @@ export const Navbar = () => {
   const links = [
     { name: "Home", link: "/" },
     { name: "Resume", link: "/resume" },
-    { name: "Projects", link: "/" },
-    { name: "Contact", link: "/" },
+    // { name: "Projects", link: "/" },
+    { name: "Contact", link: "/#" },
   ];
 
   return (
@@ -70,7 +70,9 @@ export const Navbar = () => {
           onMouseOut={onCursorOut}
         >
           <Heading weight={"bold"} as="h1" size={isMobile ? "4" : "5"}>
-            <Text className="text-gray-500">Vaibhav </Text>Shukla
+            <Link href={"/"} area-label="Logo Button">
+              <Text className="text-gray-500">Vaibhav </Text>Shukla
+            </Link>
           </Heading>
         </Box>
 

@@ -4,8 +4,8 @@ import ProjectsCarousel from "./ProjectsCarousel";
 
 const Projects = () => {
   return (
-    <Section className=" projects mx-auto lg:!px-56" id="about-section">
-      <Box className="relative md:mx-[40px] lg:mx-[40px] mx-4">
+    <Section className=" projects mx-auto lg:!px-56" id="projects-section">
+      <Box className="relative  lg:mx-[40px] md:mx-4 ">
         {/* Header */}
         <Flex direction={"column"} align={"center"} justify={"center"}>
           <Flex
@@ -17,7 +17,7 @@ const Projects = () => {
             <Heading as="h2" size={"6"} color="purple">
               Projects
             </Heading>
-            <Heading as="h3" size={"9"}>
+            <Heading as="h3" size={{ md: "9", initial: "7" }}>
               Selected <Text className="text-[var(--gray-9)]">Projects</Text>
             </Heading>
           </Flex>

@@ -68,7 +68,7 @@ const MouseHighlighter = () => {
         animate={cursorVariant}
         className={`${
           isMobile && "hidden"
-        } fixed top-0 left-0 bg-primary opacity-90 h-[32px] w-[32px] rounded-full pointer-events-none z-[500]`}
+        } fixed top-0 left-0 bg-primary opacity-90 h-[32px] w-[32px] rounded-full pointer-events-none z-[5000]`}
       ></motion.div>
     )
   );
