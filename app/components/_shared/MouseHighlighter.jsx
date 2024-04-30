@@ -3,7 +3,7 @@
 import { Box } from "@radix-ui/themes";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useHover } from "../context/MouseContext";
+import { useHover } from "../../context/MouseContext";
 import { useMediaQuery } from "react-responsive";
 
 const MouseHighlighter = () => {

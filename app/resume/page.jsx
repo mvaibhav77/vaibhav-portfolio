@@ -3,12 +3,9 @@
 import { Box, Heading } from "@radix-ui/themes";
 import { useMediaQuery } from "react-responsive";
 import { useHover } from "../context/MouseContext";
-import { FaArrowDown, FaChevronDown } from "react-icons/fa6";
-import { TypeAnimation } from "react-type-animation";
-import { Breadcrumb, DownArrow } from "../components/Breadcrumb";
-import Loader from "../components/Loader";
-import { useEffect, useState } from "react";
+import { Breadcrumb, DownArrow } from "../components/_shared/Breadcrumb";
 import About from "../components/Resume/About/About";
+import Projects from "../components/Resume/Projects/Projects";
 
 export default function Resume() {
   const isTab = useMediaQuery({ maxWidth: 1300 });
@@ -37,7 +34,8 @@ export default function Resume() {
       {/* About */}
       <About />
 
-      {/* Skills */}
+      {/* Projects */}
+      <Projects />
     </Box>
   );
 }

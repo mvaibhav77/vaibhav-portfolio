@@ -30,7 +30,7 @@ const Details = () => {
       >
         Hello! I’m Vaibhav Shukla. I am a full stack developer with a passion
         for building beautiful and functional user interfaces. I have rich
-        experience in React, Next.js, Node.js and more
+        experience in React, Next.js, Node.js and more.
       </Text>
 
       <Box className="details mt-[25px] w-fit mx-auto md:mx-0 lg:mx-0">
@@ -50,7 +50,7 @@ const Details = () => {
             <DataList.Item align="center">
               <DataList.Label minWidth="88px">Freelance</DataList.Label>
               <DataList.Value>
-                <Badge color="purple" variant="soft" radius="full">
+                <Badge color="green" variant="soft" radius="full">
                   Available
                 </Badge>
               </DataList.Value>

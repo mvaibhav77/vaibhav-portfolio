@@ -5,7 +5,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { Box, Button, Flex, Heading, Text } from "@radix-ui/themes";
 import { useMediaQuery } from "react-responsive";
-import { useHover } from "../context/MouseContext";
+import { useHover } from "../../context/MouseContext";
 import Link from "next/link";
 
 export const Navbar = () => {

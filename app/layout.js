@@ -1,10 +1,10 @@
 import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "./components/Navbar";
+import { Navbar } from "./components/_shared/Navbar";
 import "@radix-ui/themes/styles.css";
 import { Box, Theme } from "@radix-ui/themes";
-import Footer from "./components/Footer";
-import MouseHighlighter from "./components/MouseHighlighter";
+import Footer from "./components/_shared/Footer";
+import MouseHighlighter from "./components/_shared/MouseHighlighter";
 import { HoverProvider } from "./context/MouseContext";
 
 const roboto = Roboto_Condensed({ subsets: ["latin"] });

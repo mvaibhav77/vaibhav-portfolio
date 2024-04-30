@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Loader from "./components/Loader";
+import Loader from "./components/_shared/Loader";
 import { useEffect, useState } from "react";
 
 export default function Template({ children }) {
@@ -10,13 +10,15 @@ export default function Template({ children }) {
 
   useEffect(() => {
     // Simulate loading delay
-    const delay = 1000; // 1 seconds
-    const timeoutId = setTimeout(() => {
-      setMounted(true);
-    }, delay);
+    // const delay = 1000; // 1 seconds
+    // const timeoutId = setTimeout(() => {
+    //   setMounted(true);
+    // }, delay);
 
     // Clear the timeout on component unmount
-    return () => clearTimeout(timeoutId);
+    // return () => clearTimeout(timeoutId);
+
+    setMounted(true);
   }, []);
 
   return (

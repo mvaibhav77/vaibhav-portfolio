@@ -3,7 +3,7 @@
 import { Box, Flex, Text } from "@radix-ui/themes";
 import Image from "next/image";
 import Link from "next/link";
-import { useHover } from "../context/MouseContext";
+import { useHover } from "../../context/MouseContext";
 import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa6";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
@@ -24,7 +24,7 @@ const Footer = () => {
         className={`footer ${
           isTab
             ? "relative bg-[var(--gray-2)] py-[50px] top-[25vh] left-0 h-auto right-auto"
-            : "fixed bottom-[50px] left-[50px] right-[50px] height-[1px] z-100 p-0"
+            : "fixed bottom-[50px] left-[50px] right-[50px] height-[1px] z-[100000] p-0"
         }`}
       >
         {/* email and number */}

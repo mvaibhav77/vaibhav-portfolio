@@ -45,7 +45,7 @@ export default function Loader() {
       );
     };
     animateLoader();
-  }, []);
+  }, [animate, characters, scope]);
 
   return (
     <Box className="fixed h-screen w-screen bg-black top-0 left-0 z-[1000]">
