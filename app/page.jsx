@@ -8,7 +8,7 @@ export default function Home() {
   const { onCursorIn, onCursorOut } = useHover();
 
   return (
-    <Box className="main-content w-[90%] mx-auto !z-30 mb-[25vh]">
+    <Box className="main-content w-[90%] mx-auto !z-30 ">
       {/* Image */}
       <Box
         className={`relative logo bg-center bg-contain bg-no-repeat !z-30 image-container top-[-12vh] left-[-20px] !w-[100vw] !h-[65vh] md:top-[20px] md:left-[-50px] md:!w-[640px] md:!h-[560px] lg:-top-[19.5vh] lg:left-[1vw] lg:!w-[47vw] lg:!h-[78vh]
