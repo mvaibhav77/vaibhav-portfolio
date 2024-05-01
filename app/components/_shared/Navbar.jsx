@@ -71,7 +71,7 @@ export const Navbar = () => {
         >
           <Heading weight={"bold"} as="h1" size={isMobile ? "4" : "5"}>
             <Link href={"/"} area-label="Logo Button">
-              <Text className="text-gray-500">Vaibhav </Text>Shukla
+              <Text className="text-gray-400">Vaibhav </Text>Shukla
             </Link>
           </Heading>
         </Box>

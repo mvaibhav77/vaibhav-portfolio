@@ -1,9 +1,9 @@
-import { Inset, Card, Text, Box, Heading, Flex, Badge } from "@radix-ui/themes";
+import { Card, Box, Heading, Flex, Badge, IconButton } from "@radix-ui/themes";
 import { motion, useTransform } from "framer-motion";
 import Image from "next/image";
-import React from "react";
 import { useMediaQuery } from "react-responsive";
 import { useHover } from "../../../context/MouseContext";
+import { GoArrowUpRight } from "react-icons/go";
 
 const ProjectCard = ({
   i,
@@ -31,9 +31,12 @@ const ProjectCard = ({
         zIndex: totalProjects + i,
         top: isLargeScreen ? topPosition : "auto",
         marginBottom: isLargeScreen ? "10vh" : 40,
+        cursor: "pointer !important",
       }}
       key={key}
       className="cardContainer !flex items-center justify-center sticky"
+      onMouseOver={onCursorIn}
+      onMouseOut={onCursorOut}
     >
       <Card
         size="2"
@@ -71,16 +74,20 @@ const ProjectCard = ({
             </Badge>
           ))}
         </Flex>
-        <Heading
-          as="h3"
-          size={{ md: "8", initial: "6" }}
-          weight={"medium"}
-          className="my-4"
-          onMouseOver={onCursorIn}
-          onMouseOut={onCursorOut}
-        >
-          {project.title}
-        </Heading>
+        <Flex justify={"between"} align={"center"} className="my-4">
+          <Heading
+            as="h3"
+            size={{ md: "8", initial: "6" }}
+            weight={"medium"}
+            onMouseOver={onCursorIn}
+            onMouseOut={onCursorOut}
+          >
+            {project.title}
+          </Heading>
+          <IconButton size={"4"} className="rounded-full !bg-white">
+            <GoArrowUpRight className="text-3xl" color="black" />
+          </IconButton>
+        </Flex>
       </Card>
     </motion.div>
   );

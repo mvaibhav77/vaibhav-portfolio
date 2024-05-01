@@ -95,7 +95,7 @@ const Experience = () => {
             <Flex align={"center"} justify={"between"} gap={"4"}>
               <Heading
                 as="h4"
-                size={{ md: "7", initial: "6" }}
+                size={{ md: "7", initial: "5" }}
                 weight="bold"
                 color="purple"
               >
@@ -105,7 +105,7 @@ const Experience = () => {
               <Text
                 as="p"
                 size={{ md: "3", initial: "1" }}
-                className="text-[var(--gray-9)]"
+                className="text-[var(--gray-11)] whitespace-nowrap"
               >
                 {exp.date}
               </Text>
@@ -114,11 +114,15 @@ const Experience = () => {
             <Heading as="h5" size={{ md: "5", initial: "4" }} className="!mt-2">
               {exp.company || "-"}{" "}
             </Heading>
-            <Text as="p" className="text-[var(--gray-9)]">
+            <Text as="p" className="text-[var(--gray-11)]">
               {exp.location}
             </Text>
 
-            <Text as="p" size={"5"} className="tagLine mt-2">
+            <Text
+              as="p"
+              size={{ md: "5", initial: "3" }}
+              className="tagLine mt-2"
+            >
               {exp.tagLine}
             </Text>
             <Box className="mt-4 absolute bottom-6 md:left-6 lg:left-8">
@@ -127,7 +131,7 @@ const Experience = () => {
                   <Button
                     variant="soft"
                     aria-label={`View more about ${exp.title}`}
-                    size={"3"}
+                    size={{ md: "3", initial: "2" }}
                   >
                     Know More
                   </Button>

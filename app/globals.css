@@ -121,6 +121,26 @@ body {
   color: var(--gray-9);
 }
 
+/* project card flip */
+.card-flip {
+  perspective: 1000px;
+}
+
+.car-flip-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: relative;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
 @media screen and (min-width: 720px) {
   .image-container {
     position: relative;

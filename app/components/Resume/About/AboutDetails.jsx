@@ -47,30 +47,19 @@ const Details = () => {
             onMouseOver={onCursorIn}
             onMouseOut={onCursorOut}
           >
-            <DataList.Item align="center">
-              <DataList.Label minWidth="88px">Freelance</DataList.Label>
-              <DataList.Value>
-                <Badge color="green" variant="soft" radius="full">
-                  Available
-                </Badge>
-              </DataList.Value>
+            <DataList.Item>
+              <DataList.Label minWidth="88px">Name</DataList.Label>
+              <DataList.Value>Vaibhav Shukla</DataList.Value>
             </DataList.Item>
+
             <DataList.Item>
               <DataList.Label minWidth="88px">GitHub</DataList.Label>
               <DataList.Value>
-                <Flex align="center" gap="2">
-                  <Code variant="ghost">mvaibhav77</Code>
-                  <IconButton
-                    size="1"
-                    aria-label="Copy value"
-                    color="gray"
-                    variant="ghost"
-                    onClick={() => {}}
-                    className="hover:scale-120"
-                  >
-                    <FaCopy />
-                  </IconButton>
-                </Flex>
+                <Link href={"https://github.com/mvaibhav77"}>
+                  <Code variant="ghost" className="hover:underline">
+                    mvaibhav77
+                  </Code>
+                </Link>
               </DataList.Value>
             </DataList.Item>
             <DataList.Item>
@@ -93,9 +82,13 @@ const Details = () => {
             onMouseOver={onCursorIn}
             onMouseOut={onCursorOut}
           >
-            <DataList.Item>
-              <DataList.Label minWidth="88px">Name</DataList.Label>
-              <DataList.Value>Vaibhav Shukla</DataList.Value>
+            <DataList.Item align="center">
+              <DataList.Label minWidth="88px">Freelance</DataList.Label>
+              <DataList.Value>
+                <Badge color="green" variant="soft" radius="full">
+                  Available
+                </Badge>
+              </DataList.Value>
             </DataList.Item>
             <DataList.Item>
               <DataList.Label minWidth="88px">Email </DataList.Label>

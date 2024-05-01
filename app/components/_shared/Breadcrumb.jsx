@@ -7,6 +7,7 @@ import { FaChevronDown } from "react-icons/fa6";
 import { TypeAnimation } from "react-type-animation";
 import { useHover } from "../../context/MouseContext";
 import Link from "next/link";
+import { useMediaQuery } from "react-responsive";
 
 export const Breadcrumb = () => {
   const pathname = usePathname();
@@ -36,6 +37,7 @@ export const Breadcrumb = () => {
 
 export const DownArrow = () => {
   const { onCursorIn, onCursorOut } = useHover();
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
     <Box
@@ -43,8 +45,10 @@ export const DownArrow = () => {
       onMouseOver={onCursorIn}
       onMouseOut={onCursorOut}
       onClick={() => {
-        const nextSection = document.getElementById("about-section");
-        nextSection?.scrollIntoView({ behavior: "smooth" });
+        window.scrollBy({
+          top: isMobile ? window.innerHeight - 20 : window.innerHeight + 80,
+          behavior: "smooth",
+        });
       }}
     >
       <FaChevronDown className="text-white text-2xl animate-bounce" />
