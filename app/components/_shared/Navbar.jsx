@@ -39,7 +39,7 @@ export const Navbar = () => {
 
   const links = [
     { name: "Home", link: "/" },
-    { name: "Resume", link: "/resume" },
+    { name: "Projects", link: "/projects" },
     // { name: "Projects", link: "/" },
     { name: "Contact", link: "/#" },
   ];

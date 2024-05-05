@@ -15,7 +15,7 @@ export const Breadcrumb = () => {
 
   return (
     <Box
-      className="absolute bottom-[-55%] md:bottom-[-45%] lg:bottom-[-45%] md:left-[20%] lg:left-[25%] left-[30px] text-lg text-gray-500 text-center"
+      className="absolute bottom-[40px] md:bottom-[70px] lg:bottom-[70px] md:left-[20%] lg:left-[25%] left-[30px] text-lg text-gray-500 text-center"
       onMouseOver={onCursorIn}
       onMouseOut={onCursorOut}
     >
@@ -41,7 +41,7 @@ export const DownArrow = () => {
 
   return (
     <Box
-      className="absolute bottom-[-55%] md:bottom-[-45%] lg:bottom-[-45%] right-[40px] md:left-[80%] lg:left-[75%] text-center"
+      className="absolute bottom-[40px] md:bottom-[70px] lg:bottom-[70px] right-[40px] md:left-[80%] lg:left-[75%] text-center"
       onMouseOver={onCursorIn}
       onMouseOut={onCursorOut}
       onClick={() => {

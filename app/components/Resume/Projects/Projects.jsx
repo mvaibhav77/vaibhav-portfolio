@@ -2,7 +2,7 @@ import { Box, Flex, Heading, Text } from "@radix-ui/themes";
 import Section from "../../Section";
 import ProjectsCarousel from "./ProjectsCarousel";
 
-const Projects = () => {
+const SelectedProjects = () => {
   return (
     <Section className=" projects mx-auto lg:!px-56" id="projects-section">
       <Box className="relative  lg:mx-[40px] md:mx-4 ">
@@ -30,4 +30,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default SelectedProjects;
