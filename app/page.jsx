@@ -11,31 +11,32 @@ export default function Home() {
   const { onCursorIn, onCursorOut } = useHover();
 
   return (
-    <Box className="main-content mx-auto ">
-      <Box className="hero relative w-[90%] h-screen md:h-screen lg:h-auto mx-auto !z-30">
+    <Box className="relative top-[-20vh] main-content mt-0 mx-auto bg-[var(--gray-2)]">
+      {/* Hero */}
+      <Box className="hero relative w-full lg:w-[90%] lg:px-0 px-4 overflow-x-hidden  h-screen top-0 mx-auto !z-30">
         {/* Image */}
         <Box
-          className={`relative logo bg-center bg-contain bg-no-repeat !z-30 image-container top-[-12vh] left-[-20px] !w-[100vw] !h-[65vh] md:top-[20px] md:left-[-50px] md:!w-[640px] md:!h-[560px] lg:-top-[19.5vh] lg:left-[1vw] lg:!w-[47vw] lg:!h-[78vh]
+          className={`relative logo bg-center bg-contain bg-no-repeat !z-30 image-container top-[12vh] left-[-10px] !w-[100vw] !h-[65vh] md:top-[200px] md:left-[20px] md:!w-[640px] md:!h-[560px] lg:-top-[0] lg:left-[3vw] lg:!w-[47vw] lg:!h-[78vh] !overflow-hidden
         `}
         >
           <Image
-            src={"/images/me_blacknwhite.png"}
+            src={"/images/me_transparent.png"}
             layout="fill"
             objectFit="cover"
             alt="profile photo "
-            className="!z-30 bg-center !overflow-hidden"
+            className="!z-30 bg-center !overflow-hidden bg-[var(--gray-4)]"
             priority
           />
         </Box>
 
         {/* Heading */}
         <Box
-          className={`absolute top-[60vh] md:w-[360px] md:ml-[15px] md:mt-[115px] md:left-[50%] md:top-[40vh] md:bottom-auto lg:left-[45vw] lg:top-[45vh] lg:max-w-[560px]`}
+          className={`absolute top-[80vh] md:w-[360px] md:ml-[15px] md:mt-[115px] md:left-[50%] md:top-[60vh] md:bottom-auto lg:left-[45vw] lg:top-[65vh] lg:max-w-[560px]`}
         >
           <Heading
             as="h1"
             weight={"light"}
-            size={"6"}
+            size={{ md: "6", initial: "4" }}
             onMouseOver={onCursorIn}
             onMouseOut={onCursorOut}
           >
@@ -47,7 +48,7 @@ export default function Home() {
 
         {/* Typing animation */}
         <div
-          className={`absolute top-auto left-0 !bottom-[140px] text-[25px] pl-[50px] md:left-[50px] md:text-[60px] md:!bottom-[200px] lg:left-[20%] lg:text-[90px] lg:!bottom-[30px] `}
+          className={`absolute top-auto left-0 !bottom-[30px] text-[25px] pl-[50px] md:left-[10%] md:text-[60px] md:!bottom-[20px] lg:left-[20%] lg:text-[90px] lg:!bottom-[30px] `}
           onMouseOver={onCursorIn}
           onMouseOut={onCursorOut}
         >
@@ -58,6 +59,8 @@ export default function Home() {
           />
         </div>
       </Box>
+
+      {/* Resume */}
       <Box className="resume">
         {/* About */}
         <About />

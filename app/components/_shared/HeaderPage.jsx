@@ -10,7 +10,7 @@ const HeaderPage = () => {
   const isMobile = useMediaQuery({ maxWidth: 720 });
 
   return (
-    <Box className="relative top-[-50px] md:top-[-90px] lg:top-[-180px] left-0 w-screen h-screen ">
+    <Box className="relative top-[-130px] md:top-[-100px] lg:top-[-200px] left-0 w-screen h-screen ">
       <Heading
         className={`absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] ${
           isMobile ? "!text-3xl" : isTab ? "!text-[8vw]" : "!text-[8.5vw]"
