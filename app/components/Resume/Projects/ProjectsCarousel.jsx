@@ -3,7 +3,7 @@
 import { Box } from "@radix-ui/themes";
 import { useScroll } from "framer-motion";
 import { useEffect, useRef } from "react";
-import ProjectCard from "./Project Card";
+import ProjectCard from "./ProjectCard";
 import Lenis from "@studio-freight/lenis";
 import { projects } from "../../../data/projects";
 

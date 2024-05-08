@@ -5,11 +5,9 @@ import {
   Code,
   DataList,
   Flex,
-  IconButton,
   Text,
 } from "@radix-ui/themes";
 import Link from "next/link";
-import { FaCopy, FaLink } from "react-icons/fa6";
 import { useHover } from "../../../context/MouseContext";
 
 const Details = () => {
@@ -17,7 +15,7 @@ const Details = () => {
 
   const handleDownloadResume = () => {
     // download resume
-    window.open("/files/resume.pdf");
+    window.open("/files/resume_SE.pdf");
   };
 
   return (
@@ -127,7 +125,7 @@ const Details = () => {
           onMouseOver={onCursorIn}
           onMouseOut={onCursorOut}
           aria-label="Download Resume"
-          className="!mt-6 hover:scale-105 hover:!bg-primary hover:!text-white"
+          className="!mt-6 hover:scale-105 hover:!bg-primary hover:!text-white !rounded-none"
           onClick={handleDownloadResume}
         >
           View Resume
