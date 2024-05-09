@@ -141,6 +141,9 @@ body {
   transform: rotateY(180deg);
 }
 
+.rt-BaseDialogScroll * {
+  cursor: auto;
+}
 @media screen and (min-width: 720px) {
   .image-container {
     position: relative;

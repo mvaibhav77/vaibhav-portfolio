@@ -137,7 +137,7 @@ const Experience = () => {
                   </Button>
                 </Dialog.Trigger>
 
-                <Dialog.Content maxWidth="650px" className="!cursor-visible">
+                <Dialog.Content maxWidth="650px" className="!cursor-auto">
                   <Dialog.Title>{exp.title}</Dialog.Title>
                   <Dialog.Description size="2" mb="4">
                     {exp.tagLine}

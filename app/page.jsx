@@ -6,6 +6,7 @@ import { useHover } from "./context/MouseContext";
 import About from "./components/Resume/About/About";
 import Experience from "./components/Resume/Experience/Experience";
 import SelectedProjects from "./components/Resume/Projects/Projects";
+import Skills from "./components/Resume/Skills/Skills";
 
 export default function Home() {
   const { onCursorIn, onCursorOut } = useHover();
@@ -67,6 +68,9 @@ export default function Home() {
 
         {/* Experience */}
         <Experience />
+
+        {/* Skills */}
+        <Skills />
 
         {/* Projects */}
         <SelectedProjects />

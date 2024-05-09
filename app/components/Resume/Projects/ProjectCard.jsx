@@ -39,7 +39,7 @@ const ProjectCard = ({
       onMouseOut={onCursorOut}
     >
       <Card
-        size="2"
+        size="1"
         className="!flex flex-col relative top-[-5%] w-[1100px] md:h-[500px] lg:h-[700px] h-[500px] rounded-3xl !p-4 md:!p-6 lg:!p-6"
       >
         <Box clip="padding-box" side="top" className="relative w-full h-full ">

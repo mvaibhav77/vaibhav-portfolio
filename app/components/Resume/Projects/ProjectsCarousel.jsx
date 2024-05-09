@@ -2,9 +2,8 @@
 
 import { Box } from "@radix-ui/themes";
 import { useScroll } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import ProjectCard from "./ProjectCard";
-import Lenis from "@studio-freight/lenis";
 import { projects } from "../../../data/projects";
 
 const ProjectsCarousel = () => {
@@ -12,17 +11,6 @@ const ProjectsCarousel = () => {
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
-  });
-
-  useEffect(() => {
-    const lenis = new Lenis();
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
   });
 
   return (
