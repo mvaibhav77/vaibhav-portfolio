@@ -1,18 +1,12 @@
-import {
-  Flex,
-  Heading,
-  IconButton,
-  Popover,
-  Text,
-  Tooltip,
-} from "@radix-ui/themes";
+import { Flex, Heading, Popover, Text, Tooltip } from "@radix-ui/themes";
 import Section from "../../Section";
 import SkillProgress from "./SkillProgress";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { useHover } from "../../../context/MouseContext";
 import { useMediaQuery } from "react-responsive";
+import { progress } from "framer-motion";
 
-const technicalSkills = [
+const basicSkills = [
   {
     title: "Frontend Development",
     skills: [
@@ -38,7 +32,7 @@ const technicalSkills = [
     title: "Backend Development",
     skills: [
       {
-        title: "Node.js (and Express.js)",
+        title: "Server-side programming",
         progress: 80,
       },
       {
@@ -55,6 +49,31 @@ const technicalSkills = [
       },
     ],
   },
+  {
+    title: "Coding Skills",
+    skills: [
+      {
+        title: "HTML/CSS",
+        progress: 95,
+      },
+      {
+        title: "JavaScript/Typescript",
+        progress: 85,
+      },
+      {
+        title: "React.js",
+        progress: 80,
+      },
+      {
+        title: "Next.js",
+        progress: 50,
+      },
+      {
+        title: "Node.js",
+        progress: 80,
+      },
+    ],
+  },
 ];
 
 const SelectedProjects = () => {
@@ -62,6 +81,7 @@ const SelectedProjects = () => {
   const isSmallScreen = useMediaQuery({ query: "(max-width: 520px)" });
   return (
     <Section className=" skills mx-auto" id="skills-section">
+      {/* Technical Skills */}
       <Flex direction={"column"} gap={"9"} className="relative">
         {/* Header */}
         <Flex direction={"column"} align={"center"} justify={"center"}>
@@ -82,7 +102,7 @@ const SelectedProjects = () => {
 
         {/* Main Skills */}
         <Flex direction={"column"} gap={"6"} className="main-skills">
-          {technicalSkills.map(({ title, skills }, i) => (
+          {basicSkills.map(({ title, skills }, i) => (
             <Flex direction={"column"} gap={"5"} key={i}>
               <Heading
                 as="h4"
@@ -145,8 +165,6 @@ const SelectedProjects = () => {
             </Flex>
           ))}
         </Flex>
-
-        {/* Additional Skills */}
       </Flex>
     </Section>
   );

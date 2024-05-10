@@ -41,9 +41,9 @@ export default function Home() {
             onMouseOver={onCursorIn}
             onMouseOut={onCursorOut}
           >
-            {`Hello, I'm`}{" "}
-            <Strong className="bg-primary">Vaibhav Shukla</Strong>
-            {`, a Full Stack Web Developer Based in Pune`}
+            I design and build powerful web experiences.{" "}
+            <Strong className="bg-primary">Vaibhav Shukla</Strong>, Full Stack
+            Developer
           </Heading>
         </Box>
 
@@ -54,7 +54,14 @@ export default function Home() {
           onMouseOut={onCursorOut}
         >
           <TypeAnimation
-            sequence={["I develop cool websites", 2000, "I love ReactJS", 1000]}
+            sequence={[
+              "I Code Magic",
+              2000,
+              "Building Web Apps",
+              2000,
+              "Let's Connect 🚀",
+              2000,
+            ]}
             speed={15}
             repeat={Infinity}
           />
