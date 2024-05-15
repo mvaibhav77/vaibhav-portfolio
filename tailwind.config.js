@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "var(--my-color)",
-        secondary: "var(--other-color)",
+        secondary: "yellow",
       },
       screens: {
         lg: "1300px",

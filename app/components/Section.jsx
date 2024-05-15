@@ -11,12 +11,19 @@ const Section = ({ children, className }) => {
     const onScroll = () => {
       if (sectionRef.current) {
         const rect = sectionRef.current.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight * 0.75; // Adjust threshold as needed
-        setIsVisible(isVisible);
+        const isInitiallyVisible = rect.top <= window.innerHeight; // Check for initial visibility
+
+        setIsVisible(
+          isInitiallyVisible || rect.top < window.innerHeight * 0.75
+        );
+        // Combine initial check with scroll threshold
       }
     };
 
     window.addEventListener("scroll", onScroll);
+    // Trigger initial check on component mount
+    onScroll();
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 

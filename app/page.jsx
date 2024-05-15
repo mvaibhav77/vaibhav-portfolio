@@ -41,7 +41,7 @@ export default function Home() {
             onMouseOver={onCursorIn}
             onMouseOut={onCursorOut}
           >
-            I design and build powerful web experiences.{" "}
+            I design and build powerful web experiences. <br />
             <Strong className="bg-primary">Vaibhav Shukla</Strong>, Full Stack
             Developer
           </Heading>

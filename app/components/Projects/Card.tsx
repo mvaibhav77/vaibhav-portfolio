@@ -1,55 +1,28 @@
 import { Card, Box, Heading, Flex, Badge, IconButton } from "@radix-ui/themes";
-import { motion, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
-import { useHover } from "../../../context/MouseContext";
+import { useHover } from "../../context/MouseContext";
 import { GoArrowUpRight } from "react-icons/go";
 
-const ProjectCard = ({
-  i,
-  key,
-  progress,
-  range,
-  targetScale,
-  project,
-  totalProjects,
-}) => {
+const ProjectCard = ({ key, project, onClick }) => {
   const { onCursorIn, onCursorOut } = useHover();
-
-  const isLargeScreen = useMediaQuery({ minWidth: 720 });
-
-  const scale = useTransform(progress, range, [1, targetScale]);
-
-  const topOffset = 35;
-
-  const topPosition = (i + 1) * topOffset;
-
   return (
     <motion.div
-      style={{
-        scale: scale,
-        zIndex: totalProjects + i,
-        top: isLargeScreen ? topPosition : "auto",
-        marginBottom: isLargeScreen ? "10vh" : 40,
-        cursor: "pointer !important",
-      }}
       key={key}
-      className="cardContainer !flex items-center justify-center sticky"
+      className="cardContainer !flex items-center justify-center w-[100%]"
       onMouseOver={onCursorIn}
       onMouseOut={onCursorOut}
       onClick={() => (window.location.href = project.link)}
     >
       <Card
         size="1"
-        className="!flex flex-col relative top-[-5%] w-[1100px] md:h-[500px] lg:h-[700px] h-[500px] rounded-3xl !p-4 md:!p-6 lg:!p-6"
+        className="!flex flex-col relative !w-full rounded-3xl !p-4 md:!p-6 lg:!p-6"
       >
-        <Box clip="padding-box" side="top" className="relative w-full h-full ">
+        <Box className="relative w-full h-[40vh]">
           <Image
             src={project.image || "/images/me_diff.png"}
             alt="Bold typography"
-            // width={1000}
-            // height={540}
-            fill="fill"
+            fill={true}
             style={{
               objectFit: "cover",
               background: "center",
@@ -63,7 +36,7 @@ const ProjectCard = ({
           gap={{ md: "5", initial: "3" }}
           className="mt-6"
         >
-          {project.tags.map((tag, index) => (
+          {project.tags.slice(0, 4).map((tag, index) => (
             <Badge
               size={{ md: "3", initial: "2" }}
               variant="surface"

@@ -5,6 +5,7 @@ export const projects = [
     Description: "",
     tags: ["AI/Ml", "Python", "Next.js", "TailwindCSS"],
     image: "/images/summarEase.png",
+    link: "/projects/summarEase",
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const projects = [
     Description: "",
     tags: ["Cybersecurity", "Ubuntu", "React", "Rust", "Typescript"],
     image: "/images/shieldBuntu.png",
+    link: "/projects/shieldBuntu",
   },
   {
     id: 3,
@@ -19,5 +21,6 @@ export const projects = [
     Description: "",
     tags: ["React", "TailwindCSS", "Hackathon", "Management"],
     image: "/images/opinHacks.png",
+    link: "/projects/opinHacks",
   },
 ];
