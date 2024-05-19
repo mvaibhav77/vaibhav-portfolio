@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge, Box, Flex, Heading } from "@radix-ui/themes";
+import { Badge, Box, Button, Card, Flex, Heading } from "@radix-ui/themes";
 import { projects } from "../../data/projects";
 import Section from "../../components/Section";
 import Image from "next/image";
@@ -51,9 +51,28 @@ export default function Page({ params }) {
 
           {/* Info cards */}
           <Box className="project-cards">
-            <Flex direction={'row'} wrap={{md:"nowrap", initial:"wrap"}} align={'center'} justify={'center'}>
-               {/* Links */}
-               
+            <Flex
+              direction={"row"}
+              wrap={{ md: "nowrap", initial: "wrap" }}
+              align={"center"}
+              justify={"center"}
+            >
+              {/* Github */}
+              <Card className="Github" size={{ md: "3", initial: "2" }}>
+                <Heading as="h4" size={{ md: "4", initial: "3" }} color="white">
+                  GitHub
+                </Heading>
+                <Button
+                  onClick={() =>
+                    window.open(
+                      `https://github.com/e${project.github}`,
+                      "_blank"
+                    )
+                  }
+                >
+                  {project.github}
+                </Button>
+              </Card>
             </Flex>
           </Box>
 

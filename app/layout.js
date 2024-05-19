@@ -6,6 +6,7 @@ import { Box, Theme } from "@radix-ui/themes";
 import Footer from "./components/_shared/Footer";
 import MouseHighlighter from "./components/_shared/MouseHighlighter";
 import { HoverProvider } from "./context/MouseContext";
+import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto_Condensed({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${roboto.className} overflow-x-hidden `}>
+        <Analytics />
         <Theme
           appearance="dark"
           accentColor="violet"

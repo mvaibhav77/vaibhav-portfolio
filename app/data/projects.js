@@ -6,6 +6,7 @@ export const projects = [
     tags: ["AI/Ml", "Python", "Next.js", "TailwindCSS"],
     image: "/images/summarEase.png",
     link: "/projects/summarEase",
+    github: "poorvadiwan/SummarEase",
   },
   {
     id: 2,
