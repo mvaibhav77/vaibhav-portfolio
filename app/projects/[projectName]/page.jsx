@@ -14,7 +14,6 @@ import Section from "../../components/Section";
 import Image from "next/image";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa6";
-import marked from "marked"; // Import for Markdown processing
 import { useHover } from "../../context/MouseContext";
 
 export default function Page({ params }) {
