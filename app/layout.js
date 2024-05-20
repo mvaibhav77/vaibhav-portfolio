@@ -13,7 +13,8 @@ const roboto = Roboto_Condensed({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Vaibhav Shukla | Portfolio",
-  description: "This is my portfolio website.",
+  description:
+    "My name is Vaibhav Shukla and I am a full-stack developer. I am passionate about building products that solve real-world problems. I have experience in building web applications, APIs.",
 };
 
 export default function RootLayout({ children }) {
@@ -26,11 +27,8 @@ export default function RootLayout({ children }) {
           type="favicon"
           sizes="<generated>"
         />
-        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${roboto.className} overflow-x-hidden `}>
-        <Analytics />
-        <SpeedInsights />
         <Theme
           appearance="dark"
           accentColor="violet"
@@ -44,6 +42,8 @@ export default function RootLayout({ children }) {
             <main>{children}</main>
             <Footer />
           </HoverProvider>
+          {/* <Analytics />
+          <SpeedInsights /> */}
         </Theme>
       </body>
     </html>

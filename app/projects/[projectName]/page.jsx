@@ -1,14 +1,29 @@
 "use client";
 
-import { Badge, Box, Button, Card, Flex, Heading } from "@radix-ui/themes";
+import {
+  Badge,
+  Box,
+  Button,
+  Card,
+  Flex,
+  Heading,
+  Text,
+} from "@radix-ui/themes";
 import { projects } from "../../data/projects";
 import Section from "../../components/Section";
 import Image from "next/image";
+import Link from "next/link";
+import { FaLink } from "react-icons/fa6";
+import marked from "marked"; // Import for Markdown processing
+import { useHover } from "../../context/MouseContext";
 
 export default function Page({ params }) {
+  const { onCursorIn, OnCursorOut } = useHover();
+
   const project = projects.find(
     (project) => project.link === `/projects/${params.projectName}`
   );
+
   return (
     <Box className="project-main mx-auto">
       <Section className="lg:!pt-0 lg:-mt-[3vh]">
@@ -55,28 +70,62 @@ export default function Page({ params }) {
               direction={"row"}
               wrap={{ md: "nowrap", initial: "wrap" }}
               align={"center"}
+              gap={"6"}
               justify={"center"}
             >
               {/* Github */}
-              <Card className="Github" size={{ md: "3", initial: "2" }}>
-                <Heading as="h4" size={{ md: "4", initial: "3" }} color="white">
-                  GitHub
-                </Heading>
-                <Button
-                  onClick={() =>
-                    window.open(
-                      `https://github.com/e${project.github}`,
-                      "_blank"
-                    )
-                  }
+              {project.github && (
+                <Badge size={"3"} color="yellow">
+                  <Link
+                    href={`https://github.com/${project.github}`}
+                    target="_blank"
+                    className="flex flex-row items-center gap-2 text-xl"
+                  >
+                    Github <FaLink />
+                  </Link>
+                </Badge>
+              )}
+
+              {/* Site */}
+              {project.site && (
+                <Badge size={"3"} color="yellow">
+                  <Link
+                    href={`${project.site}`}
+                    target="_blank"
+                    className="flex flex-row items-center gap-2 text-xl"
+                  >
+                    Demo <FaLink />
+                  </Link>
+                </Badge>
+              )}
+
+              {/* Status */}
+              {project.status && (
+                <Badge
+                  size={"3"}
+                  className="!text-xl"
+                  color={project.status === "Completed" ? "green" : "orange"}
                 >
-                  {project.github}
-                </Button>
-              </Card>
+                  {project.status}
+                </Badge>
+              )}
             </Flex>
           </Box>
 
-          {/* Description  */}
+          {/* Description */}
+          <Box
+            className="project-description md:w-5/6 w-full"
+            onMouseOver={onCursorIn}
+            onMouseOut={OnCursorOut}
+          >
+            {/* write description here */}
+            <Text
+              as="p"
+              className="md:text-2xl lg:text-3xl text-lg p-2 md:pl-4 text-center"
+            >
+              {project.description}
+            </Text>
+          </Box>
         </Flex>
       </Section>
     </Box>
