@@ -15,6 +15,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa6";
 import { useHover } from "../../context/MouseContext";
+import React from "react";
+import ReactPlayer from "react-player";
 
 export default function Page({ params }) {
   const { onCursorIn, OnCursorOut } = useHover();
@@ -57,12 +59,19 @@ export default function Page({ params }) {
               </Flex>
             </Flex>
           </Box>
-
-          {/* Image */}
+          {/* /* Image */}
           <Box className="relative project-image w-full lg:w-[90%] h-[60vw] md:h-[50vw] lg:h-[65vh]">
-            <Image src={project.image} fill={true} alt={project.title} />
+            {project.demoVideo ? (
+              <ReactPlayer
+                className="!w-full !h-full object-cover"
+                controls={true}
+                url={project.demoVideo}
+                light={project.image}
+              />
+            ) : (
+              <Image src={project.image} layout="fill" alt={project.title} />
+            )}
           </Box>
-
           {/* Info cards */}
           <Box className="project-cards">
             <Flex
@@ -110,7 +119,6 @@ export default function Page({ params }) {
               )}
             </Flex>
           </Box>
-
           {/* Description */}
           <Box
             className="project-description md:w-5/6 w-full"

@@ -17,6 +17,7 @@ export const projects = [
       "Hardening your Ubuntu system can be complex, leaving it vulnerable. ShieldBuntu simplifies the process with a user-friendly GUI. Anyone can now secure their system, regardless of technical expertise. Customize security measures based on your organization's policies and empower everyone to contribute to a strong security posture",
     tags: ["Cybersecurity", "Ubuntu", "React", "Rust", "Typescript"],
     image: "/images/shieldBuntu.png",
+    demoVideo: "/files/shieldBuntuDemo.mp4",
     link: "/projects/shieldBuntu",
     github: "samrakshaa/SheildBuntu",
     status: "Completed",

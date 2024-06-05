@@ -41,7 +41,7 @@ export const DownArrow = () => {
 
   return (
     <Box
-      className="absolute bottom-[40px] md:bottom-[70px] lg:bottom-[70px] right-[40px] md:left-[80%] lg:left-[75%] text-center"
+      className="absolute bottom-[40px] md:bottom-[70px] lg:bottom-[60px] right-[40px] md:left-[80%] lg:left-[85%] text-center"
       onMouseOver={onCursorIn}
       onMouseOut={onCursorOut}
       onClick={() => {

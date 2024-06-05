@@ -7,6 +7,7 @@ import About from "./components/Resume/About/About";
 import Experience from "./components/Resume/Experience/Experience";
 import SelectedProjects from "./components/Resume/Projects/Projects";
 import Skills from "./components/Resume/Skills/Skills";
+import { DownArrow } from "./components/_shared/Breadcrumb";
 
 export default function Home() {
   const { onCursorIn, onCursorOut } = useHover();
@@ -66,7 +67,11 @@ export default function Home() {
             repeat={Infinity}
           />
         </div>
+
+        <DownArrow />
       </Box>
+
+      {/* breakcrumbs */}
 
       {/* Resume */}
       <Box className="resume">

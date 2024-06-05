@@ -8,14 +8,15 @@ export const experience = [
     tagLine:
       "Building scalable web applications using React, Node.js, and PostgreSQL.",
     description: [
-      `Developed an employee portal that increased team productivity and reduced HR processing time.`,
-      `Managing backend API routes and a PostgreSQL database,
-    ensuring seamless integration with the React frontend, the
-    resulting in 15% fewer bugs and a 10% improvement in appli-
-    cation performance`,
+      `Developed a comprehensive employee portal using React/Material
+    UI (Front-End) and Node.js/Express/Prisma (Back-End).`,
+      `Resolved bugs and implemented client feedback, resulting in a
+    more user-friendly and efficient employee portal.`,
       `Collaborating closely with a team of 10+ team members to
-    deliver a high-quality UI/UX, increasing in user satisfaction
-    and a 10% reduction in support tickets.`,
+    deliver a high-quality UI/UX, increasing user satisfaction.`,
+      `Maintained high activity levels on Hubstaff (60%) to ensure
+    concentrated efforts in development and problem-solving
+    within a dynamic environment.`,
     ],
   },
   {
