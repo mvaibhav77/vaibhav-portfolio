@@ -34,4 +34,16 @@ export const projects = [
     site: "https://opinhacks.netlify.app/",
     status: "Completed",
   },
+  {
+    id: 4,
+    title: "CareerConf: Conference Event Site",
+    description:
+      "The GDSC Career Conf website was developed to effectively promote and manage registrations for a career-focused event. Leveraging Next.js, Tailwind CSS, and Framer Motion, the website showcased speaker profiles, event details, and facilitated seamless user registration. The owl-themed design enhanced user engagement, contributing to the event's success.",
+    tags: ["Next.js", "TailwindCSS", "Framer Motion", "Management"],
+    image: "/images/careerConf.png",
+    link: "/projects/careerConf",
+    github: "Harsh-bhai/gdsc-career-conf",
+    site: "https://gdsccareerconf.netlify.app/",
+    status: "Completed",
+  },
 ];

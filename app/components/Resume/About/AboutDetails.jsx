@@ -21,7 +21,10 @@ const Details = () => {
   };
 
   return (
-    <Box className="desc text-center ml-0 md:text-left lg:text-left md:ml-[145px] lg:ml-[195px]">
+    <Box
+      className="desc text-center ml-0 md:text-left lg:text-left md:ml-[145px] lg:ml-[195px]"
+      id="about"
+    >
       {/* bio */}
       <Text
         className="mt-0 break-words"
@@ -85,7 +88,7 @@ const Details = () => {
             <DataList.Item align="center">
               <DataList.Label minWidth="88px">Freelance</DataList.Label>
               <DataList.Value>
-                <Badge color="green" variant="soft" radius="full">
+                <Badge color="green" variant="soft" radius="full" size={"3"}>
                   Available
                 </Badge>
               </DataList.Value>
@@ -104,15 +107,17 @@ const Details = () => {
               </DataList.Value>
             </DataList.Item>
             <DataList.Item>
-              <DataList.Label minWidth="88px">Company</DataList.Label>
+              <DataList.Label minWidth="88px">LinkedIn</DataList.Label>
               <DataList.Value>
                 <Link
                   target="_blank"
-                  aria-label="Company Website"
-                  href="https://omegaorion.com"
+                  aria-label="LinkedIn Profile"
+                  href="https://linkedin.com/in/mvaibhav77"
                   className="hover:underline"
                 >
-                  Omega Orion
+                  <Badge color="blue" variant="soft" radius="full">
+                    mvaibhav77
+                  </Badge>{" "}
                 </Link>
               </DataList.Value>
             </DataList.Item>

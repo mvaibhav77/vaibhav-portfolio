@@ -25,7 +25,7 @@ const SkillProgress = ({ title, progress, key }) => {
 
   const getLevel = (progress) => {
     if (progress >= 90) {
-      return "Proffesional";
+      return "Professional";
     } else if (progress >= 60) {
       return "Advanced";
     } else if (progress >= 30) {

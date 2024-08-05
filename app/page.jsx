@@ -22,11 +22,11 @@ export default function Home() {
         `}
         >
           <Image
-            src={"/images/me_transparent.png"}
+            src={"/images/me-color.png"}
             layout="fill"
             objectFit="cover"
             alt="profile photo "
-            className="!z-30 bg-center !overflow-hidden bg-[var(--gray-4)]"
+            className="!z-30 bg-bottom !overflow-hidden bg-[var(--gray-4)]"
             priority
           />
         </Box>

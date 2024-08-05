@@ -41,7 +41,7 @@ export const Navbar = () => {
     { name: "Home", link: "/" },
     { name: "Projects", link: "/projects" },
     // { name: "Projects", link: "/" },
-    { name: "Contact", link: "/#" },
+    { name: "Contact", link: "/#about" },
   ];
 
   return (
