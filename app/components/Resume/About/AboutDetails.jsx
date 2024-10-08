@@ -16,7 +16,7 @@ const Details = () => {
   const handleDownloadResume = () => {
     // download resume
     window.open(
-      "https://drive.google.com/file/d/1Nytt2XCyhApM86cDOWVvDwvhemZ8gZRQ/view?usp=drive_link"
+      "https://drive.google.com/file/d/1_ZyNB41_vmLOPmT1CzdEJYypDj9mBNi8/view?usp=sharing"
     );
   };
 
