@@ -2,7 +2,7 @@ export const experience = [
   {
     title: "Full Stack Developer",
     company: "Omega Orion",
-    date: "Jan 2024 - Present",
+    date: "Jan 2024 - June 2024",
     location: "Remote",
     site: "https://omegaorion.com",
     tagLine:
@@ -22,7 +22,7 @@ export const experience = [
   {
     title: "Opensource Contributor",
     company: "GitHub",
-    date: "Sept 2023 - Present",
+    date: "Sept 2023 - Dec 2023",
     location: "Remote",
     site: "https://github.com/mvaibhav77",
     tagLine: "Contributing to open-source projects on GitHub",

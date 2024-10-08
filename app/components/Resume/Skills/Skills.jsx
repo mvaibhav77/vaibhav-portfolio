@@ -6,25 +6,98 @@ import { useHover } from "../../../context/MouseContext";
 import { useMediaQuery } from "react-responsive";
 import { progress } from "framer-motion";
 
+// const basicSkills = [
+//   {
+//     title: "Frontend Development",
+//     skills: [
+//       {
+//         title: "Implementing UI/UX designs",
+//         progress: 95,
+//       },
+//       {
+//         title: "Responsive Web design",
+//         progress: 85,
+//       },
+//       {
+//         title: "Animations and Transitions",
+//         progress: 50,
+//       },
+//       {
+//         title: "State and Context Management",
+//         progress: 65,
+//       },
+//     ],
+//   },
+//   {
+//     title: "Backend Development",
+//     skills: [
+//       {
+//         title: "Server-side programming",
+//         progress: 80,
+//       },
+//       {
+//         title: "RESTful APIs",
+//         progress: 95,
+//       },
+//       {
+//         title: "DBMS (MongoDB, PostgreSQL, etc.)",
+//         progress: 65,
+//       },
+//       {
+//         title: "Authentication and Authorization",
+//         progress: 60,
+//       },
+//     ],
+//   },
+//   {
+//     title: "Coding Skills",
+//     skills: [
+//       {
+//         title: "HTML/CSS",
+//         progress: 95,
+//       },
+//       {
+//         title: "JavaScript/Typescript",
+//         progress: 85,
+//       },
+//       {
+//         title: "React.js",
+//         progress: 80,
+//       },
+//       {
+//         title: "Next.js",
+//         progress: 50,
+//       },
+//       {
+//         title: "Node.js",
+//         progress: 80,
+//       },
+//     ],
+//   },
+// ];
 const basicSkills = [
   {
     title: "Frontend Development",
     skills: [
       {
-        title: "Implementing UI/UX designs",
+        title: "HTML/CSS",
+        progress: 90,
+      },
+      {
+        title: "React.js",
+        progress: 80,
+      },
+      {
+        title: "Next.js",
+        progress: 70,
+      },
+      {
+        title: "Redux",
+        progress: 60,
+      },
+      {
+        title: "TailwindCSS",
         progress: 95,
-      },
-      {
-        title: "Responsive Web design",
-        progress: 85,
-      },
-      {
-        title: "Animations and Transitions",
-        progress: 50,
-      },
-      {
-        title: "State and Context Management",
-        progress: 65,
       },
     ],
   },
@@ -32,16 +105,20 @@ const basicSkills = [
     title: "Backend Development",
     skills: [
       {
-        title: "Server-side programming",
+        title: "Node.js/Express.js",
         progress: 80,
       },
       {
-        title: "RESTful APIs",
-        progress: 95,
+        title: "Prisma",
+        progress: 70,
       },
       {
         title: "DBMS (MongoDB, PostgreSQL, etc.)",
-        progress: 65,
+        progress: 75,
+      },
+      {
+        title: "tRPC",
+        progress: 55,
       },
       {
         title: "Authentication and Authorization",
@@ -50,32 +127,27 @@ const basicSkills = [
     ],
   },
   {
-    title: "Coding Skills",
+    title: "Programming Languages",
     skills: [
-      {
-        title: "HTML/CSS",
-        progress: 95,
-      },
       {
         title: "JavaScript/Typescript",
         progress: 85,
       },
       {
-        title: "React.js",
+        title: "Java",
         progress: 80,
       },
       {
-        title: "Next.js",
+        title: "Python",
         progress: 50,
       },
       {
-        title: "Node.js",
+        title: "Solidity",
         progress: 80,
       },
     ],
   },
 ];
-
 const SelectedProjects = () => {
   const { onCursorIn, onCursorOut } = useHover();
   const isSmallScreen = useMediaQuery({ query: "(max-width: 520px)" });

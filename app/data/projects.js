@@ -5,7 +5,13 @@ export const projects = [
     description:
       "SummarEase tackles information overload by transforming lengthy text documents (like PDFs) into engaging video summaries. Perfect for busy students, professionals, and anyone who finds reading long documents a chore, SummarEase helps you grasp key points quickly and efficiently through visually captivating videos.",
     tags: ["AI/Ml", "Python", "Next.js", "TailwindCSS"],
-    image: "/images/summarEase.png",
+    thumbnail: "/images/summarEase.png",
+    images: [
+      "/images/summarEase.png",
+      "/images/seUpload.png",
+      "/images/seProcess.png",
+      "/images/seGallery.png",
+    ],
     link: "/projects/summarEase",
     github: "poorvadiwan/SummarEase",
     status: "In Progress",
@@ -16,7 +22,8 @@ export const projects = [
     description:
       "Hardening your Ubuntu system can be complex, leaving it vulnerable. ShieldBuntu simplifies the process with a user-friendly GUI. Anyone can now secure their system, regardless of technical expertise. Customize security measures based on your organization's policies and empower everyone to contribute to a strong security posture",
     tags: ["Cybersecurity", "Ubuntu", "React", "Rust", "Typescript"],
-    image: "/images/shieldBuntu.png",
+    thumbnail: "/images/shieldBuntu.png",
+    images: ["/images/shieldBuntu.png"],
     demoVideo: "/files/shieldBuntuDemo.mp4",
     link: "/projects/shieldBuntu",
     github: "samrakshaa/SheildBuntu",
@@ -28,7 +35,8 @@ export const projects = [
     description:
       "Empowering innovation! OpinHacks is an event registration website built specifically for the OpinHacks hackathon. This user-friendly platform streamlines the registration process, allowing participants to easily sign up and focus on what matters most - tackling exciting challenges and collaborating with fellow innovators.",
     tags: ["React", "TailwindCSS", "Hackathon", "Management"],
-    image: "/images/opinHacks.png",
+    thumbnail: "/images/opinHacks.png",
+    images: ["/images/opinHacks.png"],
     link: "/projects/opinHacks",
     github: "mvaibhav77/OpinHacks",
     site: "https://opinhacks.netlify.app/",
@@ -36,11 +44,31 @@ export const projects = [
   },
   {
     id: 4,
+    title: "Synergy: A Professional Networking Platform",
+    description:
+      "Synergy aims to revolutionize the way professionals connect and collaborate. By leveraging AI-powered recommendations, social network integration, and personalized features, Synergy provides a comprehensive platform for users to discover relevant connections, initiate meaningful conversations, and enhance their professional growth. The platform utilizes cutting-edge technologies such as Node.js, React, and MongoDB to deliver a seamless and efficient user experience.",
+    tags: ["MERN", "TailwindCSS", "JWT Auth", "AI/ML"],
+    thumbnail: "/images/synergy.png",
+    images: [
+      "/images/synergy.png",
+      "/images/synergyAuth.png",
+      "/images/synergyChat.png",
+      "/images/synergyHome.png",
+      "/images/synergyProfile.png",
+    ],
+    link: "/projects/synergy",
+    github: "mvaibhav77/Synergy",
+    site: "https://synergy-76cw.onrender.com/",
+    status: "In Development",
+  },
+  {
+    id: 5,
     title: "CareerConf: Conference Event Site",
     description:
       "The GDSC Career Conf website was developed to effectively promote and manage registrations for a career-focused event. Leveraging Next.js, Tailwind CSS, and Framer Motion, the website showcased speaker profiles, event details, and facilitated seamless user registration. The owl-themed design enhanced user engagement, contributing to the event's success.",
     tags: ["Next.js", "TailwindCSS", "Framer Motion", "Management"],
-    image: "/images/careerConf.png",
+    thumbnail: "/images/careerConf.png",
+    images: ["/images/careerConf.png"],
     link: "/projects/careerConf",
     github: "Harsh-bhai/gdsc-career-conf",
     site: "https://gdsccareerconf.netlify.app/",

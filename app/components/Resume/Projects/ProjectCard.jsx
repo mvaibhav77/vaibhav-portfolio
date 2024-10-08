@@ -45,7 +45,7 @@ const ProjectCard = ({
       >
         <Box clip="padding-box" side="top" className="relative w-full h-full ">
           <Image
-            src={project.image || "/images/me_diff.png"}
+            src={project.thumbnail || "/images/me_diff.png"}
             alt="Bold typography"
             // width={1000}
             // height={540}

@@ -1,5 +1,5 @@
 "use client";
-import { Box, Flex, Grid, Heading, Text } from "@radix-ui/themes";
+import { Flex, Grid } from "@radix-ui/themes";
 import Card from "./Card"; // Import Card component
 import { projects } from "../../data/projects"; // Import project data
 

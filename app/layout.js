@@ -1,5 +1,6 @@
 import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
+import "swiper/css";
 import { Navbar } from "./components/_shared/Navbar";
 import "@radix-ui/themes/styles.css";
 import { Box, Theme } from "@radix-ui/themes";

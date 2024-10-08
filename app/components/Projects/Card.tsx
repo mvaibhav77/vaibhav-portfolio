@@ -16,11 +16,11 @@ const ProjectCard = ({ key, project, onClick }) => {
     >
       <Card
         size="1"
-        className="!flex flex-col relative !w-full rounded-3xl !p-4 md:!p-6 lg:!p-6"
+        className="!flex flex-col relative !w-full rounded-3xl !p-4 md:!p-6 lg:!p-6 md:h-auto h-[55vh]"
       >
         <Box className="relative w-full h-[40vh]">
           <Image
-            src={project.image || "/images/me_diff.png"}
+            src={project.thumbnail || "/images/me_diff.png"}
             alt="Bold typography"
             fill={true}
             style={{

@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Badge,
-  Box,
-  Button,
-  Card,
-  Flex,
-  Heading,
-  Text,
-} from "@radix-ui/themes";
+import { Badge, Box, Flex, Heading, Text } from "@radix-ui/themes";
 import { projects } from "../../data/projects";
 import Section from "../../components/Section";
 import Image from "next/image";
@@ -17,6 +9,7 @@ import { FaLink } from "react-icons/fa6";
 import { useHover } from "../../context/MouseContext";
 import React from "react";
 import ReactPlayer from "react-player";
+import ImageCarousel from "../../components/Projects/ImageCarousel";
 
 export default function Page({ params }) {
   const { onCursorIn, OnCursorOut } = useHover();
@@ -66,10 +59,15 @@ export default function Page({ params }) {
                 className="!w-full !h-full object-cover"
                 controls={true}
                 url={project.demoVideo}
-                light={project.image}
+                light={project.thumbnail}
               />
             ) : (
-              <Image src={project.image} layout="fill" alt={project.title} />
+              // <Image
+              //   src={project.thumbnail}
+              //   layout="fill"
+              //   alt={project.title}
+              // />
+              <ImageCarousel project={project} />
             )}
           </Box>
           {/* Info cards */}
