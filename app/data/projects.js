@@ -1,6 +1,23 @@
 export const projects = [
   {
     id: 1,
+    title: "MAUT: Multi Anti-Virus Utility Tool",
+    description:
+      "MAUT is a multi-antivirus utility tool that allows users to scan files for malware using multiple antivirus engines. This tool provides a comprehensive solution for detecting and removing malicious software, enhancing system security and protecting user data. By leveraging the power of multiple antivirus engines, MAUT ensures thorough scanning and accurate results, empowering users to safeguard their systems effectively.",
+    tags: ["Rust", "Virtualization", "Security", "React", "Typescript"],
+    thumbnail: "/images/maut.png",
+    images: [
+      "/images/maut.png",
+      "/images/collab-2.jpeg",
+      "/images/team.jpg",
+      "/images/withCheque.jpeg",
+    ],
+    link: "/projects/maut",
+    github: "samrakshaaa/MAUT",
+    status: "Completed",
+  },
+  {
+    id: 1,
     title: "SummarEase: AI Video Summarizer",
     description:
       "SummarEase tackles information overload by transforming lengthy text documents (like PDFs) into engaging video summaries. Perfect for busy students, professionals, and anyone who finds reading long documents a chore, SummarEase helps you grasp key points quickly and efficiently through visually captivating videos.",

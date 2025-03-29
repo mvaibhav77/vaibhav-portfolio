@@ -1,14 +1,11 @@
 import {
-  Badge,
   Box,
   Button,
-  Code,
   DataList,
   Dialog,
   Flex,
   Grid,
   Heading,
-  ScrollArea,
   Text,
 } from "@radix-ui/themes";
 import Section from "../../Section";
@@ -45,45 +42,6 @@ const Experience = () => {
 
       {/* Experience Cards */}
       <Grid columns={{ md: "2", initial: "1" }} gap={"8"} className="mt-16">
-        {/* {experience.map((exp, i) => (
-            <Box
-              key={i}
-              variant="ghost"
-              className="border-[1px] border-[#ffffff1a] !rounded-none md:!p-6 lg:!py-6 lg:!px-8  !p-4"
-            >
-              <Flex align={"center"} justify={"between"}>
-                <Heading
-                  as="h4"
-                  size={{ md: "6", initial: "5" }}
-                  weight="bold"
-                  color="purple"
-                >
-                  {exp.title}
-                </Heading>
-
-                <Text as="p" size={"4"} className="text-[var(--gray-9)]">
-                  {exp.date}
-                </Text>
-              </Flex>
-              <Flex align={"center"} justify={"between"}>
-                <Text as="h5" size={{ md: "5", initial: "4" }} className="">
-                  {exp.company}{" "}
-                </Text>
-              </Flex>
-              <Text as="p" className="text-[var(--gray-9)]">
-                {exp.location}
-              </Text>
-              <Box className="description mt-2">
-                <ul key={i} className="!list-disc pl-4">
-                  {exp.description.map((desc, i) => (
-                    <li key={i} className="!mb-2">
-                      {desc}
-                    </li>
-                  ))}
-                </ul>
-              </Box>
-            </Box>
-          ))} */}
         {experience.map((exp, i) => (
           <Box
             key={i}
@@ -112,7 +70,15 @@ const Experience = () => {
             </Flex>
 
             <Heading as="h5" size={{ md: "5", initial: "4" }} className="!mt-2">
-              {exp.company || "-"}{" "}
+              <Link
+                href={exp.site || "#"}
+                aria-label="Company website"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                {exp.company || "-"}
+              </Link>
             </Heading>
             <Text as="p" className="text-[var(--gray-11)]">
               {exp.location}
@@ -160,7 +126,9 @@ const Experience = () => {
                           {" "}
                           <Link
                             href={exp.site || "#"}
-                            aria-label="Phone Number"
+                            aria-label="Company website"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="hover:underline"
                           >
                             {exp.company}
