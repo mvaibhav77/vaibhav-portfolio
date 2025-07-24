@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, Box, Heading, Flex, Badge, IconButton } from "@radix-ui/themes";
 import { motion, useTransform } from "framer-motion";
 import Image from "next/image";
@@ -7,7 +9,6 @@ import { GoArrowUpRight } from "react-icons/go";
 
 const ProjectCard = ({
   i,
-  key,
   progress,
   range,
   targetScale,
@@ -33,7 +34,6 @@ const ProjectCard = ({
         marginBottom: isLargeScreen ? "10vh" : 40,
         cursor: "pointer !important",
       }}
-      key={key}
       className="cardContainer !flex items-center justify-center sticky"
       onMouseOver={onCursorIn}
       onMouseOut={onCursorOut}

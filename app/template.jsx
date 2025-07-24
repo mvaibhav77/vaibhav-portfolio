@@ -6,18 +6,8 @@ import { useEffect, useState } from "react";
 
 export default function Template({ children }) {
   const [mounted, setMounted] = useState(false);
-  const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
-    // Simulate loading delay
-    // const delay = 1000; // 1 seconds
-    // const timeoutId = setTimeout(() => {
-    //   setMounted(true);
-    // }, delay);
-
-    // Clear the timeout on component unmount
-    // return () => clearTimeout(timeoutId);
-
     setMounted(true);
   }, []);
 

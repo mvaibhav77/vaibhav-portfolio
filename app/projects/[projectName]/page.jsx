@@ -3,7 +3,6 @@
 import { Badge, Box, Flex, Heading, Text } from "@radix-ui/themes";
 import { projects } from "../../data/projects";
 import Section from "../../components/Section";
-import Image from "next/image";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa6";
 import { useHover } from "../../context/MouseContext";
