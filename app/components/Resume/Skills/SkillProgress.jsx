@@ -1,7 +1,7 @@
 import { Box, Flex, Heading, Progress, Text } from "@radix-ui/themes";
 import { useRef } from "react";
 
-const SkillProgress = ({ title, progress, key }) => {
+const SkillProgress = ({ title, progress }) => {
   const progressRef = useRef(null);
 
   const levelColor = {
@@ -41,7 +41,6 @@ const SkillProgress = ({ title, progress, key }) => {
       direction="column"
       gap={{ xs: "2", initial: "7" }}
       className="skill-progress"
-      key={key}
     >
       {/* header */}
       <Heading as="h5" size={{ md: "3", initial: "2" }} weight={"medium"}>
