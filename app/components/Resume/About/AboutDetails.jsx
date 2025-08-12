@@ -16,7 +16,7 @@ const Details = () => {
   const handleDownloadResume = () => {
     // download resume
     window.open(
-      "https://drive.google.com/file/d/1_ZyNB41_vmLOPmT1CzdEJYypDj9mBNi8/view?usp=sharing"
+      process.env.NEXT_PUBLIC_RESUME_URL || "/resume.pdf",
     );
   };
 
