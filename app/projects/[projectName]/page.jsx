@@ -13,8 +13,10 @@ import ImageCarousel from "../../components/Projects/ImageCarousel";
 export default function Page({ params }) {
   const { onCursorIn, OnCursorOut } = useHover();
 
+  const resolvedParams = React.use(params);
+
   const project = projects.find(
-    (project) => project.link === `/projects/${params.projectName}`
+    (project) => project.link === `/projects/${resolvedParams.projectName}`
   );
 
   return (

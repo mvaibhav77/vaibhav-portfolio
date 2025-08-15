@@ -2,7 +2,7 @@ export const experience = [
   {
     title: "Software Engineer Intern",
     company: "Seagate Technology",
-    date: "Jan 2025 - Current",
+    date: "Jan 2025 - July 2025",
     location: "Pune, IN",
     site: "https://www.seagate.com",
     tagLine:
@@ -34,21 +34,21 @@ export const experience = [
     within a dynamic environment.`,
     ],
   },
-  // {
-  //   title: "Opensource Contributor",
-  //   company: "GitHub",
-  //   date: "Sept 2023 - Dec 2023",
-  //   location: "Remote",
-  //   site: "https://github.com/mvaibhav77",
-  //   tagLine: "Contributing to open-source projects on GitHub",
-  //   description: [
-  //     `Actively contributed to open-source projects (772 contributions since Feb 2022) by ﬁxing graphics and component stability issues, likely improving user experience.`,
-  //     `Demonstrated strong coding skills through 12 pull requests,
-  //     resolving bugs and enhancing project functionality.`,
-  //     `Solved issues in Excalidraw: Fixed a bug causing a "strange
-  //     symbol" to appear after deleting items. My solution ensures
-  //     the selection tool functions correctly, enhancing user experi-
-  //     ence.`,
-  //   ],
-  // },
+  {
+    title: "Opensource Contributor",
+    company: "GitHub",
+    date: "Sept 2023 - Dec 2023",
+    location: "Remote",
+    site: "https://github.com/mvaibhav77",
+    tagLine: "Contributing to open-source projects on GitHub",
+    description: [
+      `Actively contributed to open-source projects (772 contributions since Feb 2022) by ﬁxing graphics and component stability issues, likely improving user experience.`,
+      `Demonstrated strong coding skills through 12 pull requests,
+      resolving bugs and enhancing project functionality.`,
+      `Solved issues in Excalidraw: Fixed a bug causing a "strange
+      symbol" to appear after deleting items. My solution ensures
+      the selection tool functions correctly, enhancing user experi-
+      ence.`,
+    ],
+  },
 ];

@@ -1,6 +1,30 @@
 export const projects = [
   {
     id: 1,
+    title: "3D Collaboration Studio",
+    description:
+      "3D Collaboration Studio is a full-stack web application that enables users to collaborate on 3D objects and models in real-time. The project's core focus is performance, featuring a Node.js backend with throttled WebSockets to ensure a smooth, responsive experience. To handle large 3D models (100MB+), the application uses an advanced client-side caching system with IndexedDB, allowing massive files to load almost instantly after the initial download. The frontend is built on a modern micro-frontend architecture using React and React Three Fiber, and the entire application is deployed on Vercel and Render.",
+    tags: [
+      "TypeScript",
+      "Three.js",
+      "React",
+      "Node.js",
+      "Performance Optimisation",
+    ],
+    thumbnail: "/images/3Dcollab-1.png",
+    images: [
+      "/images/3Dcollab-1.png",
+      "/images/3Dcollab-2.png",
+      "/images/3Dcollab-3.png",
+      "/images/3Dcollab-4.png",
+    ],
+    link: "/projects/3d_studio",
+    site: "https://3d-collab-studio.vercel.app/",
+    github: "mvaibhav77/3d-collab-studio",
+    demoVideo: "/files/3dStudio_demo.mp4",
+  },
+  {
+    id: 2,
     title: "MAUT: Multi Anti-Virus Utility Tool",
     description:
       "MAUT is a multi-antivirus utility tool that allows users to scan files for malware using multiple antivirus engines. This tool provides a comprehensive solution for detecting and removing malicious software, enhancing system security and protecting user data. By leveraging the power of multiple antivirus engines, MAUT ensures thorough scanning and accurate results, empowering users to safeguard their systems effectively.",
@@ -17,7 +41,7 @@ export const projects = [
     status: "Completed",
   },
   {
-    id: 1,
+    id: 3,
     title: "SummarEase: AI Video Summarizer",
     description:
       "SummarEase tackles information overload by transforming lengthy text documents (like PDFs) into engaging video summaries. Perfect for busy students, professionals, and anyone who finds reading long documents a chore, SummarEase helps you grasp key points quickly and efficiently through visually captivating videos.",
@@ -34,7 +58,7 @@ export const projects = [
     status: "In Progress",
   },
   {
-    id: 2,
+    id: 4,
     title: "ShieldBuntu: Ubuntu Hardening Application",
     description:
       "Hardening your Ubuntu system can be complex, leaving it vulnerable. ShieldBuntu simplifies the process with a user-friendly GUI. Anyone can now secure their system, regardless of technical expertise. Customize security measures based on your organization's policies and empower everyone to contribute to a strong security posture",
@@ -47,7 +71,7 @@ export const projects = [
     status: "Completed",
   },
   {
-    id: 3,
+    id: 5,
     title: "OpinHacks: Hackathon Event Site",
     description:
       "Empowering innovation! OpinHacks is an event registration website built specifically for the OpinHacks hackathon. This user-friendly platform streamlines the registration process, allowing participants to easily sign up and focus on what matters most - tackling exciting challenges and collaborating with fellow innovators.",
@@ -60,7 +84,7 @@ export const projects = [
     status: "Completed",
   },
   {
-    id: 4,
+    id: 6,
     title: "Synergy: A Professional Networking Platform",
     description:
       "Synergy aims to revolutionize the way professionals connect and collaborate. By leveraging AI-powered recommendations, social network integration, and personalized features, Synergy provides a comprehensive platform for users to discover relevant connections, initiate meaningful conversations, and enhance their professional growth. The platform utilizes cutting-edge technologies such as Node.js, React, and MongoDB to deliver a seamless and efficient user experience.",
@@ -79,7 +103,7 @@ export const projects = [
     status: "In Development",
   },
   {
-    id: 5,
+    id: 7,
     title: "CareerConf: Conference Event Site",
     description:
       "The GDSC Career Conf website was developed to effectively promote and manage registrations for a career-focused event. Leveraging Next.js, Tailwind CSS, and Framer Motion, the website showcased speaker profiles, event details, and facilitated seamless user registration. The owl-themed design enhanced user engagement, contributing to the event's success.",
