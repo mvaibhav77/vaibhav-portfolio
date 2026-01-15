@@ -1,7 +1,7 @@
 "use client";
 
 import { Box } from "@radix-ui/themes";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { useHover } from "../../context/MouseContext";
 import { useMediaQuery } from "react-responsive";
@@ -14,27 +14,32 @@ const MouseHighlighter = () => {
   const { isHovered } = useHover();
 
   const [mounted, setMounted] = useState(false);
+  const throttleRef = useRef(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   useEffect(() => {
-    if (isHovered) setCursorVariant("hover");
-    else setCursorVariant("default");
+    setCursorVariant(isHovered ? "hover" : "default");
   }, [isHovered]);
 
-  useEffect(() => {
-    const onMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
+  const handleMouseMove = useCallback((e) => {
+    if (throttleRef.current) clearTimeout(throttleRef.current);
 
-    window.addEventListener("mousemove", onMouseMove);
+    throttleRef.current = setTimeout(() => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    }, 8); // ~120fps throttle for smooth animation
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
 
     return () => {
-      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (throttleRef.current) clearTimeout(throttleRef.current);
     };
-  });
+  }, [handleMouseMove]);
 
   const variants = {
     default: {

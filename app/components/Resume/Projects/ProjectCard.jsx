@@ -46,13 +46,13 @@ const ProjectCard = ({
         <Box clip="padding-box" side="top" className="relative w-full h-full ">
           <Image
             src={project.thumbnail || "/images/me_diff.png"}
-            alt="Bold typography"
-            // width={1000}
-            // height={540}
-            fill="fill"
+            alt={project.title}
+            fill
+            quality={75}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1100px"
             style={{
               objectFit: "cover",
-              background: "center",
+              objectPosition: "center",
               borderRadius: "var(--radius-2)",
             }}
           />

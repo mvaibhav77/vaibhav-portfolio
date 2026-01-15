@@ -2,29 +2,33 @@ import { Box } from "@radix-ui/themes";
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
-const Section = ({ children, className }) => {
+const Section = ({ children, className, id }) => {
   const [isVisible, setIsVisible] = useState(false);
   const controls = useAnimation();
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const onScroll = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        const isInitiallyVisible = rect.top <= window.innerHeight; // Check for initial visibility
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1, rootMargin: "50px" }
+    );
 
-        setIsVisible(
-          isInitiallyVisible || rect.top < window.innerHeight * 0.75
-        );
-        // Combine initial check with scroll threshold
+    const currentRef = sectionRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
-
-    window.addEventListener("scroll", onScroll);
-    // Trigger initial check on component mount
-    onScroll();
-
-    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
@@ -32,13 +36,14 @@ const Section = ({ children, className }) => {
       controls.start({
         y: 0,
         opacity: 1,
-        transition: { duration: 0.75, ease: "easeInOut" },
+        transition: { duration: 0.6, ease: "easeOut" },
       });
     }
   }, [isVisible, controls]);
 
   return (
     <Box
+      id={id}
       className={
         `relative bg-[var(--gray-1)] lg:px-[20%] lg:py-[70px]  md:px-[50px] py-[50px] px-[30px] z-10 ` +
         className

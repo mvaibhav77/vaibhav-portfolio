@@ -1,13 +1,30 @@
 "use client";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Box, Heading, Strong } from "@radix-ui/themes";
 import { TypeAnimation } from "react-type-animation";
 import { useHover } from "./context/MouseContext";
-import About from "./components/Resume/About/About";
-import Experience from "./components/Resume/Experience/Experience";
-import SelectedProjects from "./components/Resume/Projects/Projects";
-import Skills from "./components/Resume/Skills/Skills";
 import { DownArrow } from "./components/_shared/Breadcrumb";
+
+// Dynamic imports for heavy components
+const About = dynamic(() => import("./components/Resume/About/About"), {
+  loading: () => <div className="h-screen" />,
+});
+const Experience = dynamic(
+  () => import("./components/Resume/Experience/Experience"),
+  {
+    loading: () => <div className="h-screen" />,
+  }
+);
+const Skills = dynamic(() => import("./components/Resume/Skills/Skills"), {
+  loading: () => <div className="h-screen" />,
+});
+const SelectedProjects = dynamic(
+  () => import("./components/Resume/Projects/Projects"),
+  {
+    loading: () => <div className="h-screen" />,
+  }
+);
 
 export default function Home() {
   const { onCursorIn, onCursorOut } = useHover();
@@ -23,15 +40,13 @@ export default function Home() {
       >
         {/* Image */}
         <Box
-          className={`relative logo bg-center bg-contain bg-no-repeat !z-30 image-container top-[12vh] left-[-10px] !w-[100vw] !h-[65vh] md:top-[200px] md:left-[20px] md:!w-[640px] md:!h-[560px] lg:-top-[0] lg:left-[3vw] lg:!w-[47vw] lg:!h-[78vh] !overflow-hidden
-        `}
+          className={`relative logo !z-30 image-container top-[12vh] left-[-10px] !w-[100vw] !h-[65vh] md:top-[200px] md:left-[20px] md:!w-[640px] md:!h-[560px] lg:-top-[0] lg:left-[3vw] lg:!w-[47vw] lg:!h-[78vh] !overflow-hidden`}
         >
           <Image
-            // src={"/images/me-color.png"}
             src={"/images/me-anime-2.png"}
             layout="fill"
             objectFit="contain"
-            alt="profile photo "
+            alt="Vaibhav Shukla Hero Image"
             // className="!z-30 bg-bottom !overflow-hidden bg-[var(--gray-4)]"
             className="!z-30 bg-bottom !overflow-hidden bg-[#353326]"
             priority

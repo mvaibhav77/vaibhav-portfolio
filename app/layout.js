@@ -10,12 +10,17 @@ import { HoverProvider } from "./context/MouseContext";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const roboto = Roboto_Condensed({ subsets: ["latin"] });
+const roboto = Roboto_Condensed({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+});
 
 export const metadata = {
   title: "Vaibhav Shukla | Portfolio",
   description:
     "My name is Vaibhav Shukla and I am a full-stack developer. I am passionate about building products that solve real-world problems. I have experience in building web applications, APIs.",
+  metadataBase: new URL("https://vbhv-io.vercel.app/"),
 };
 
 export default function RootLayout({ children }) {
@@ -27,6 +32,12 @@ export default function RootLayout({ children }) {
           href="/favicon.png"
           type="favicon"
           sizes="<generated>"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
         />
       </head>
       <body className={`${roboto.className} overflow-x-hidden `}>

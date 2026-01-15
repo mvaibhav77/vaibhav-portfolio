@@ -23,8 +23,6 @@ const ImageCarousel = ({ project }) => {
       }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
     >
       {project.images.map((image, index) => (
         <SwiperSlide key={index} className="relative w-full h-full">
