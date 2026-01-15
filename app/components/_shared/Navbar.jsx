@@ -62,6 +62,8 @@ export const Navbar = () => {
         className={`pb-4 !z-50 transition-colors duration-500 ease-out ${
           isMobile ? "p-4 px-5" : isTab ? "p-4 px-8" : "p-12"
         }`}
+        role="region"
+        aria-label="Main navigation"
       >
         {/* logo */}
         <Box

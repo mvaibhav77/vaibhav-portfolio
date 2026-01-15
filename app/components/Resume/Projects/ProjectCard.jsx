@@ -85,7 +85,11 @@ const ProjectCard = ({
           >
             {project.title}
           </Heading>
-          <IconButton size={"4"} className="rounded-full !bg-white">
+          <IconButton
+            size={"4"}
+            className="rounded-full !bg-white"
+            aria-label={`Open ${project.title} project`}
+          >
             <GoArrowUpRight className="text-3xl" color="black" />
           </IconButton>
         </Flex>

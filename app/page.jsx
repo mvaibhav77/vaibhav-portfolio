@@ -15,7 +15,12 @@ export default function Home() {
   return (
     <Box className="relative top-[-20vh] main-content mt-0 mx-auto bg-[var(--gray-2)]">
       {/* Hero */}
-      <Box className="hero relative w-full lg:w-[90%] lg:px-0 px-4 overflow-x-hidden  h-screen top-0 mx-auto !z-30">
+      <Box
+        className="hero relative w-full lg:w-[90%] lg:px-0 px-4 overflow-x-hidden  h-screen top-0 mx-auto !z-30"
+        tabIndex={0}
+        role="region"
+        aria-label="Hero introduction"
+      >
         {/* Image */}
         <Box
           className={`relative logo bg-center bg-contain bg-no-repeat !z-30 image-container top-[12vh] left-[-10px] !w-[100vw] !h-[65vh] md:top-[200px] md:left-[20px] md:!w-[640px] md:!h-[560px] lg:-top-[0] lg:left-[3vw] lg:!w-[47vw] lg:!h-[78vh] !overflow-hidden
@@ -23,12 +28,12 @@ export default function Home() {
         >
           <Image
             // src={"/images/me-color.png"}
-            src={"/images/me-anime.jpeg"}
+            src={"/images/me-anime-2.png"}
             layout="fill"
             objectFit="contain"
             alt="profile photo "
             // className="!z-30 bg-bottom !overflow-hidden bg-[var(--gray-4)]"
-            className="!z-30 bg-bottom !overflow-hidden bg-[#363427]"
+            className="!z-30 bg-bottom !overflow-hidden bg-[#353326]"
             priority
           />
         </Box>

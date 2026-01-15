@@ -16,7 +16,12 @@ import { experience } from "../../../data/experience";
 const Experience = () => {
   const { onCursorIn, onCursorOut } = useHover();
   return (
-    <Section className=" experience mx-auto " id="experience-section">
+    <Section
+      className=" experience mx-auto "
+      id="experience-section"
+      role="region"
+      aria-label="Work Experience"
+    >
       {/* Header */}
       <Flex direction={"column"} align={"center"}>
         <Flex direction={"column"} align={"center"} gap={"5"}>

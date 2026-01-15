@@ -8,6 +8,8 @@ const About = () => {
     <Section
       className="about mt-[5vh] md:!pt-[140px] lg:!pt-[140px]"
       id="about-section"
+      role="region"
+      aria-label="About me"
     >
       <Box className="relative lg:p-[35px] md:p-[25px] p-[25px] text-[16px] border-[1px] border-[#ffffff1a]">
         {/* IMAGE */}

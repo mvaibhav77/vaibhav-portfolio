@@ -1,5 +1,19 @@
 export const experience = [
   {
+    title: "SDE 1",
+    company: "Intervue.io",
+    date: "August 2025 - Present",
+    location: "Bangalore",
+    site: "https://www.intervue.io",
+    tagLine:
+      "Working on the interviewing platform to streamline and enhance the technical assessment process.",
+    description: [
+      `Platform Development: Contributing to the development and maintenance of the core interviewing platform, ensuring a seamless experience for interviewers and candidates.`,
+      `Feature Enhancement: Implementing new features and improvements to the live coding environment and real-time collaboration tools.`,
+      `System Optimization: Optimizing the platform for performance and reliability to support high volumes of concurrent interviews.`,
+    ],
+  },
+  {
     title: "Software Engineer Intern",
     company: "Seagate Technology",
     date: "Jan 2025 - July 2025",

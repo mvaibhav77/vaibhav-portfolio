@@ -4,7 +4,12 @@ import ProjectsCarousel from "./ProjectsCarousel";
 
 const SelectedProjects = () => {
   return (
-    <Section className=" projects mx-auto lg:!px-56" id="projects-section">
+    <Section
+      className=" projects mx-auto lg:!px-56"
+      id="projects-section"
+      role="region"
+      aria-label="Projects"
+    >
       <Box className="relative  lg:mx-[40px] md:mx-4 ">
         {/* Header */}
         <Flex direction={"column"} align={"center"} justify={"center"}>

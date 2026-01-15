@@ -1,7 +1,6 @@
 "use client";
 
 import { Box, Flex, Text } from "@radix-ui/themes";
-import Image from "next/image";
 import Link from "next/link";
 import { useHover } from "../../context/MouseContext";
 import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa6";
@@ -38,6 +37,8 @@ const Footer = () => {
           }`}
           onMouseOver={onCursorIn}
           onMouseOut={onCursorOut}
+          role="region"
+          aria-label="Contact information"
         >
           <Text size="3" weight="light" color="#bbb">
             E:{" "}
@@ -65,6 +66,8 @@ const Footer = () => {
           }
           onMouseOver={onCursorIn}
           onMouseOut={onCursorOut}
+          role="region"
+          aria-label="Social media links"
         >
           {/* label */}
           <Text
@@ -74,7 +77,7 @@ const Footer = () => {
             className={
               isTab
                 ? "hidden"
-                : `label absolute text-right bottom-[100%] right-0 pr-[75px] h-[24px] whitespace-nowrap origin-[100%_0%] rotate-90 after:content-[''] after:bg-secondary after:absolute after:right-0 after:top-[50%] after:w-[50px] after:h-[1px] after:bg-[#fff]`
+                : `label absolute text-right bottom-[100%] right-0 pr-[75px] h-[24px] whitespace-nowrap origin-[100%_0%] rotate-90 after:content-[''] after:bg-secondary after:absolute after:right-0 after:top-[50%] after:w-[50px] after:h-[1px]`
             }
           >
             Follow me

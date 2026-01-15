@@ -4,7 +4,6 @@ import SkillProgress from "./SkillProgress";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { useHover } from "../../../context/MouseContext";
 import { useMediaQuery } from "react-responsive";
-import { progress } from "framer-motion";
 
 // const basicSkills = [
 //   {
@@ -77,82 +76,88 @@ import { progress } from "framer-motion";
 // ];
 const basicSkills = [
   {
-    title: "Frontend Development",
-    skills: [
-      {
-        title: "HTML/CSS",
-        progress: 90,
-      },
-      {
-        title: "React.js",
-        progress: 80,
-      },
-      {
-        title: "Next.js",
-        progress: 70,
-      },
-      {
-        title: "Redux",
-        progress: 60,
-      },
-      {
-        title: "TailwindCSS",
-        progress: 95,
-      },
-    ],
-  },
-  {
     title: "Backend Development",
     skills: [
       {
-        title: "Node.js/Express.js",
-        progress: 80,
+        title: "Node.js / Express.js",
+        progress: 90,
       },
       {
-        title: "Prisma",
-        progress: 70,
+        title: "PostgreSQL / Prisma",
+        progress: 85,
       },
       {
-        title: "DBMS (MongoDB, PostgreSQL, etc.)",
-        progress: 75,
-      },
-      {
-        title: "tRPC",
+        title: "AWS / Docker / Kubernetes",
         progress: 55,
       },
       {
-        title: "Authentication and Authorization",
-        progress: 60,
+        title: "System Optimization",
+        progress: 80,
+      },
+      {
+        title: "Java / Java EE",
+        progress: 55,
+      },
+      {
+        title: "Boomi Integrations",
+        progress: 70,
       },
     ],
   },
   {
-    title: "Programming Languages",
+    title: "Frontend Development",
     skills: [
       {
-        title: "JavaScript/Typescript",
+        title: "React.js / Next.js",
         progress: 85,
       },
       {
-        title: "Java",
+        title: "Tailwind CSS / Material UI",
+        progress: 95,
+      },
+      {
+        title: "WebSockets / Real-time",
+        progress: 70,
+      },
+      {
+        title: "Redux / State Management",
         progress: 80,
+      },
+    ],
+  },
+  {
+    title: "Languages & Technologies",
+    skills: [
+      {
+        title: "JavaScript / TypeScript",
+        progress: 90,
+      },
+      {
+        title: "Java",
+        progress: 65,
       },
       {
         title: "Python",
-        progress: 50,
+        progress: 55,
       },
       {
-        title: "Solidity",
-        progress: 80,
+        title: "AI Integration (LLMs)",
+        progress: 75,
       },
     ],
   },
 ];
+
 const SelectedProjects = () => {
   const { onCursorIn, onCursorOut } = useHover();
   const isSmallScreen = useMediaQuery({ query: "(max-width: 520px)" });
   return (
-    <Section className=" skills mx-auto" id="skills-section">
+    <Section
+      className=" skills mx-auto"
+      id="skills-section"
+      role="region"
+      aria-label="Technical Skills"
+    >
       {/* Technical Skills */}
       <Flex direction={"column"} gap={"9"} className="relative">
         {/* Header */}

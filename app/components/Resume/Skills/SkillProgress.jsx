@@ -36,6 +36,7 @@ const SkillProgress = ({ title, progress }) => {
   };
 
   const handleHover = () => {};
+  const level = getLevel(progress);
   return (
     <Flex
       direction="column"
@@ -56,6 +57,7 @@ const SkillProgress = ({ title, progress }) => {
           size={1}
           color={getColor(progress)}
           radius="none"
+          aria-label={`${title}: ${progress}% (${level})`}
         />
         <Text
           className="percentage absolute top-[-28px]"
