@@ -40,15 +40,16 @@ export default function Home() {
       >
         {/* Image */}
         <Box
-          className={`relative logo !z-30 image-container top-[12vh] left-[-10px] !w-[100vw] !h-[65vh] md:top-[200px] md:left-[20px] md:!w-[640px] md:!h-[560px] lg:-top-[0] lg:left-[3vw] lg:!w-[47vw] lg:!h-[78vh] !overflow-hidden`}
+          className={`relative logo !z-30 image-container top-[12vh] left-[-10px] !w-[100vw] !h-[65vh] md:top-[200px] md:left-[20px] md:!w-[640px] md:!h-[560px] lg:-top-[0] lg:left-[3vw] lg:!w-[47vw] lg:!h-[78vh] !overflow-hidden bg-[#353326]`}
         >
+          <div className="pointer-events-none absolute inset-0 z-40 bg-gradient-to-b from-transparent via-[#353326]/25 to-[#353326]" />
           <Image
-            src={"/images/me-anime-2.png"}
-            layout="fill"
-            objectFit="contain"
+            src={"/images/me_suit.jpeg"}
+            fill
+            sizes="(max-width: 768px) 100vw, 47vw"
             alt="Vaibhav Shukla Hero Image"
-            // className="!z-30 bg-bottom !overflow-hidden bg-[var(--gray-4)]"
-            className="!z-30 bg-bottom !overflow-hidden bg-[#353326]"
+            className="!z-30 bg-bottom !overflow-hidden hero-portrait-blend"
+            style={{ objectFit: "cover", objectPosition: "center top" }}
             priority
           />
         </Box>

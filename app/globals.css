@@ -75,6 +75,22 @@ body {
   contain: layout style paint;
 }
 
+.hero-portrait-blend {
+  filter: saturate(0.9) contrast(1.05) brightness(0.95);
+  -webkit-mask-image: radial-gradient(
+    circle at 55% 35%,
+    rgba(0, 0, 0, 1) 58%,
+    rgba(0, 0, 0, 0.85) 72%,
+    rgba(0, 0, 0, 0) 92%
+  );
+  mask-image: radial-gradient(
+    circle at 55% 35%,
+    rgba(0, 0, 0, 1) 58%,
+    rgba(0, 0, 0, 0.85) 72%,
+    rgba(0, 0, 0, 0) 92%
+  );
+}
+
 .typing-master {
   border-right: solid 5px;
   white-space: nowrap;
