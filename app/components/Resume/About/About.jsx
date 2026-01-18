@@ -15,10 +15,10 @@ const About = () => {
         {/* IMAGE */}
         <Box className="image relative aspect-square text-center mx-auto md:float-left lg:float-left w-[120px] lg:w-[160px] md:w-[120px] md:mr-0 mb-[25px] ">
           <Image
-            src={"/images/me_diff.png"}
+            src={"/images/me-anime-2.png"}
             alt="me"
             fill={true}
-            className="object-cover rounded-full"
+            className="object-cover rounded-full object-top"
           />
         </Box>
 

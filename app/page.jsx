@@ -14,7 +14,7 @@ const Experience = dynamic(
   () => import("./components/Resume/Experience/Experience"),
   {
     loading: () => <div className="h-screen" />,
-  }
+  },
 );
 const Skills = dynamic(() => import("./components/Resume/Skills/Skills"), {
   loading: () => <div className="h-screen" />,
@@ -23,7 +23,7 @@ const SelectedProjects = dynamic(
   () => import("./components/Resume/Projects/Projects"),
   {
     loading: () => <div className="h-screen" />,
-  }
+  },
 );
 
 export default function Home() {
