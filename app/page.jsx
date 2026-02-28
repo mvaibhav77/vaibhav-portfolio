@@ -30,7 +30,7 @@ export default function Home() {
   const { onCursorIn, onCursorOut } = useHover();
 
   return (
-    <Box className="relative top-[-20vh] main-content mt-0 mx-auto bg-[var(--gray-2)]">
+    <Box className="relative top-[-23vh] main-content mt-0 mx-auto bg-[var(--gray-2)]">
       {/* Hero */}
       <Box
         className="hero relative w-full lg:w-[90%] lg:px-0 px-4 overflow-x-hidden  h-screen top-0 mx-auto !z-30"
@@ -73,7 +73,7 @@ export default function Home() {
 
         {/* Typing animation */}
         <div
-          className={`absolute top-auto left-0 !bottom-[30px] text-[25px] pl-[50px] md:left-[10%] md:text-[60px] md:!bottom-[20px] lg:left-[20%] lg:text-[90px] lg:!bottom-[30px] `}
+          className={`absolute top-auto left-0 !bottom-[30px] text-[25px] pl-[50px] md:left-[10%] md:text-[60px] md:!bottom-[20px] lg:left-[20%] lg:text-[90px] lg:!bottom-[30px]`}
           onMouseOver={onCursorIn}
           onMouseOut={onCursorOut}
         >

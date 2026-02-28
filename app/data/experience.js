@@ -1,16 +1,16 @@
 export const experience = [
   {
-    title: "SDE 1",
+    title: "Software Engineer",
     company: "Intervue.io",
     date: "August 2025 - Present",
     location: "Bangalore",
     site: "https://www.intervue.io",
     tagLine:
-      "Working on the interviewing platform to streamline and enhance the technical assessment process.",
+      "Building and scaling backend systems that power real-time interviewing and assessment workflows.",
     description: [
-      `Platform Development: Contributing to the development and maintenance of the core interviewing platform, ensuring a seamless experience for interviewers and candidates.`,
-      `Feature Enhancement: Implementing new features and improvements to the live coding environment and real-time collaboration tools.`,
-      `System Optimization: Optimizing the platform for performance and reliability to support high volumes of concurrent interviews.`,
+      "Architecting and maintaining event-driven backend workflows to support scheduling, communication, and live interview processes.",
+      "Designing reliable asynchronous processing using queues and caching to ensure high availability and production stability.",
+      "Driving seamless production releases through zero-downtime deployment strategies and system reliability improvements.",
     ],
   },
   {
