@@ -1,5 +1,23 @@
 export const projects = [
   {
+    id: 8,
+    title: "async-merge: AST-Aware Git Merge Driver",
+    description:
+      "async-merge automatically resolves the Git merge conflicts that a normal merge leaves behind. When two branches change the same code, it combines both sets of changes into one working file, so features from both sides survive the merge with no conflict markers and no manual edits. It plugs into your existing git merge workflow with a one-time setup, works with your own AI API key or a local model, and supports popular languages including TypeScript, Go, Python, Rust, and Java. It never writes a broken result: if a merge looks wrong, it leaves the conflict for you to resolve.",
+    tags: ["Go", "Git", "Tree-sitter", "LLM"],
+    thumbnail: "/images/asyncMerge.png",
+    images: [
+      "/images/asyncMerge.png",
+      "/images/asyncMerge-conflict.png",
+      "/images/asyncMerge-result.png",
+    ],
+    link: "/projects/async-merge",
+    github: "mvaibhav77/async-merge",
+    site: "https://drive.google.com/file/d/1VEHbcAjVu6RZE_HjJmCDQgUWEBT8lGNV/view?usp=sharing",
+    demoVideo: "/files/asyncMerge_demo.mp4",
+    status: "In Progress",
+  },
+  {
     id: 1,
     title: "3D Collaboration Studio",
     description:

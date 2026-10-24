@@ -4,6 +4,10 @@ import Card from "./Card"; // Import Card component
 import { projects } from "../../data/projects"; // Import project data
 
 const ProjectsGrid = () => {
+  const rest = projects.slice(3);
+  const pairedRest = rest.slice(0, rest.length - (rest.length % 2));
+  const lastUnpaired = rest.length % 2 ? rest[rest.length - 1] : null;
+
   return (
     <Flex direction={"column"} gap={"5"} className="projects-grid mt-12">
       {/* Row 1 - Two Cards */}
@@ -30,10 +34,17 @@ const ProjectsGrid = () => {
         gap="5"
         className="mx-auto"
       >
-        {projects.slice(3).map((project) => (
+        {pairedRest.map((project) => (
           <Card key={project.id} project={project} />
         ))}
       </Grid>
+
+      {/* Odd card out - Full width */}
+      {lastUnpaired && (
+        <Grid columns={"1"} gap="5" className="mx-auto w-full">
+          <Card key={lastUnpaired.id} project={lastUnpaired} />
+        </Grid>
+      )}
     </Flex>
   );
 };

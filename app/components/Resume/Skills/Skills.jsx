@@ -1,156 +1,13 @@
-import { Flex, Heading, Popover, Text, Tooltip } from "@radix-ui/themes";
+import { Box, Flex, Grid, Heading, Text } from "@radix-ui/themes";
 import Section from "../../Section";
-import SkillProgress from "./SkillProgress";
-import { AiFillInfoCircle } from "react-icons/ai";
 import { useHover } from "../../../context/MouseContext";
-import { useMediaQuery } from "react-responsive";
+import { skills } from "../../../data/skills";
 
-// const basicSkills = [
-//   {
-//     title: "Frontend Development",
-//     skills: [
-//       {
-//         title: "Implementing UI/UX designs",
-//         progress: 95,
-//       },
-//       {
-//         title: "Responsive Web design",
-//         progress: 85,
-//       },
-//       {
-//         title: "Animations and Transitions",
-//         progress: 50,
-//       },
-//       {
-//         title: "State and Context Management",
-//         progress: 65,
-//       },
-//     ],
-//   },
-//   {
-//     title: "Backend Development",
-//     skills: [
-//       {
-//         title: "Server-side programming",
-//         progress: 80,
-//       },
-//       {
-//         title: "RESTful APIs",
-//         progress: 95,
-//       },
-//       {
-//         title: "DBMS (MongoDB, PostgreSQL, etc.)",
-//         progress: 65,
-//       },
-//       {
-//         title: "Authentication and Authorization",
-//         progress: 60,
-//       },
-//     ],
-//   },
-//   {
-//     title: "Coding Skills",
-//     skills: [
-//       {
-//         title: "HTML/CSS",
-//         progress: 95,
-//       },
-//       {
-//         title: "JavaScript/Typescript",
-//         progress: 85,
-//       },
-//       {
-//         title: "React.js",
-//         progress: 80,
-//       },
-//       {
-//         title: "Next.js",
-//         progress: 50,
-//       },
-//       {
-//         title: "Node.js",
-//         progress: 80,
-//       },
-//     ],
-//   },
-// ];
-const basicSkills = [
-  {
-    title: "Backend Development",
-    skills: [
-      {
-        title: "Node.js / Express.js",
-        progress: 90,
-      },
-      {
-        title: "PostgreSQL / Prisma",
-        progress: 85,
-      },
-      {
-        title: "AWS / Docker / Kubernetes",
-        progress: 55,
-      },
-      {
-        title: "System Optimization",
-        progress: 80,
-      },
-      {
-        title: "Java / Java EE",
-        progress: 55,
-      },
-      {
-        title: "Boomi Integrations",
-        progress: 70,
-      },
-    ],
-  },
-  {
-    title: "Frontend Development",
-    skills: [
-      {
-        title: "React.js / Next.js",
-        progress: 85,
-      },
-      {
-        title: "Tailwind CSS / Material UI",
-        progress: 95,
-      },
-      {
-        title: "WebSockets / Real-time",
-        progress: 70,
-      },
-      {
-        title: "Redux / State Management",
-        progress: 80,
-      },
-    ],
-  },
-  {
-    title: "Languages & Technologies",
-    skills: [
-      {
-        title: "JavaScript / TypeScript",
-        progress: 90,
-      },
-      {
-        title: "Java",
-        progress: 65,
-      },
-      {
-        title: "Python",
-        progress: 55,
-      },
-      {
-        title: "AI Integration (LLMs)",
-        progress: 75,
-      },
-    ],
-  },
-];
+const toId = (category) =>
+  `skills-${category.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
-const SelectedProjects = () => {
+const Skills = () => {
   const { onCursorIn, onCursorOut } = useHover();
-  const isSmallScreen = useMediaQuery({ query: "(max-width: 520px)" });
   return (
     <Section
       className=" skills mx-auto"
@@ -158,93 +15,91 @@ const SelectedProjects = () => {
       role="region"
       aria-label="Technical Skills"
     >
-      {/* Technical Skills */}
-      <Flex direction={"column"} gap={"9"} className="relative">
-        {/* Header */}
-        <Flex direction={"column"} align={"center"} justify={"center"}>
-          <Flex
-            direction={"column"}
-            align={"center"}
-            justify={"center"}
-            gap={"5"}
+      {/* Header */}
+      <Flex direction={"column"} align={"center"}>
+        <Flex direction={"column"} align={"center"} gap={"5"}>
+          <Heading
+            as="h2"
+            size={"6"}
+            color="purple"
+            onMouseOver={onCursorIn}
+            onMouseOut={onCursorOut}
           >
-            <Heading as="h2" size={"6"} color="purple">
-              Skills
-            </Heading>
-            <Heading as="h3" size={{ md: "9", initial: "7" }}>
-              Technical <Text className="text-[var(--gray-9)]">Skills</Text>
-            </Heading>
-          </Flex>
-        </Flex>
-
-        {/* Main Skills */}
-        <Flex direction={"column"} gap={"6"} className="main-skills">
-          {basicSkills.map(({ title, skills }, i) => (
-            <Flex direction={"column"} gap={"5"} key={i}>
-              <Heading
-                as="h4"
-                size={{ md: "7", initial: "5" }}
-                color="purple"
-                className="flex items-center gap-3"
-                onMouseOver={onCursorIn}
-                onMouseOut={onCursorOut}
-              >
-                {title}{" "}
-                {isSmallScreen ? (
-                  <Popover.Root>
-                    <Popover.Trigger>
-                      <Text
-                        size={"1"}
-                        radius="full"
-                        className="!text-lg text-[var(--gray-9)]"
-                      >
-                        <AiFillInfoCircle color="white" />
-                      </Text>
-                    </Popover.Trigger>
-                    <Popover.Content className="bg-white shadow rounded p-2 w-[300px]">
-                      Skill levels are a self-assessment based on experience and
-                      projects. Your interpretation may vary.
-                    </Popover.Content>
-                  </Popover.Root>
-                ) : (
-                  <Tooltip
-                    content={
-                      "Skill levels are a self-assessment based on experience and projects. Your interpretation may vary."
-                    }
-                  >
-                    <Text
-                      size={"1"}
-                      radius="full"
-                      className="!text-lg text-[var(--gray-9)] !cursor-default"
-                    >
-                      <AiFillInfoCircle
-                        color="white"
-                        className="!cursor-default"
-                      />
-                    </Text>
-                  </Tooltip>
-                )}
-              </Heading>
-
-              <Flex
-                direction={"column"}
-                gap="6"
-                className="border-[1px] border-[#ffffff1a] p-8"
-              >
-                {skills.map(({ title: skillTitle, progress }, i) => (
-                  <SkillProgress
-                    title={skillTitle}
-                    progress={progress}
-                    key={i}
-                  />
-                ))}
-              </Flex>
-            </Flex>
-          ))}
+            Skills
+          </Heading>
+          <Heading
+            as="h3"
+            size={{ md: "9", initial: "7" }}
+            onMouseOver={onCursorIn}
+            onMouseOut={onCursorOut}
+          >
+            Technical <Text className="text-[var(--gray-9)]">Skills</Text>
+          </Heading>
+          <Text
+            as="p"
+            size={{ md: "4", initial: "3" }}
+            align={"center"}
+            className="text-[var(--gray-11)] max-w-[520px]"
+            onMouseOver={onCursorIn}
+            onMouseOut={onCursorOut}
+          >
+            The languages, frameworks and tools I use across my work and
+            projects.
+          </Text>
         </Flex>
       </Flex>
+
+      {/* Skill Groups */}
+      <Grid columns={{ md: "2", initial: "1" }} gap={"6"} className="mt-16">
+        {skills.map(({ category, items }, i) => (
+          <Box
+            key={category}
+            gridColumn={
+              skills.length % 2 === 1 && i === skills.length - 1
+                ? { md: "span 2" }
+                : undefined
+            }
+            className="border-[1px] border-[#ffffff1a] p-5 md:p-6 lg:p-8"
+          >
+            <Heading
+              as="h4"
+              id={toId(category)}
+              size={{ md: "6", initial: "5" }}
+              color="purple"
+              className="!mb-5"
+              onMouseOver={onCursorIn}
+              onMouseOut={onCursorOut}
+            >
+              {category}
+            </Heading>
+
+            <ul
+              aria-labelledby={toId(category)}
+              className="flex flex-wrap gap-2.5"
+            >
+              {items.map(({ name, icon: Icon }) => (
+                <li
+                  key={name}
+                  className="group inline-flex items-center gap-2 rounded-full border-[1px] border-[#ffffff1a] bg-[var(--gray-2)] px-3 py-1.5 text-sm text-[var(--gray-12)] transition-colors duration-200 hover:border-[var(--accent-8)] hover:bg-[var(--accent-3)] hover:text-[var(--accent-12)]"
+                  onMouseOver={onCursorIn}
+                  onMouseOut={onCursorOut}
+                >
+                  {Icon && (
+                    <Icon
+                      aria-hidden="true"
+                      focusable="false"
+                      className="shrink-0 text-[1.05em] text-[var(--gray-11)] transition-colors duration-200 group-hover:text-[var(--accent-11)]"
+                    />
+                  )}
+                  {name}
+                </li>
+              ))}
+            </ul>
+          </Box>
+        ))}
+      </Grid>
     </Section>
   );
 };
 
-export default SelectedProjects;
+export default Skills;

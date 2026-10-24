@@ -124,7 +124,7 @@ export const Navbar = () => {
         </Box>
 
         {isMobile && (
-          <motion.Box
+          <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={
               isNavbarOpen
@@ -151,7 +151,7 @@ export const Navbar = () => {
                 </Link>
               ))}
             </Flex>
-          </motion.Box>
+          </motion.div>
         )}
       </Box>
     )

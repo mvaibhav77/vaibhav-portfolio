@@ -31,9 +31,9 @@ const Details = () => {
         onMouseOver={onCursorIn}
         onMouseOut={onCursorOut}
       >
-        Hello! I’m Vaibhav Shukla. I am a full stack developer with a passion
-        for building beautiful and functional user interfaces. I have rich
-        experience in React, Next.js, Node.js and more.
+        Hi, I’m Vaibhav Shukla, a full stack developer who builds products end
+        to end, from frontend and backend to the cloud infrastructure they run
+        on. Right now I’m focused on AI and data-driven architectures.
       </Text>
 
       <Box className="details mt-[25px] w-fit mx-auto md:mx-0 lg:mx-0">
